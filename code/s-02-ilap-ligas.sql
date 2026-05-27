@@ -1,4 +1,4 @@
---@Autor: Hansel Yael Tepal Briseño
+--@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
 --@Fecha creación: 26/05/2026
 --@Descripción: Creación de ligas en los 4 nodos.
 

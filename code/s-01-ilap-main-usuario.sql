@@ -1,4 +1,4 @@
---@Autor: Hansel Yael Tepal Briseño
+--@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
 --@Fecha creación: 26/05/2026
 --@Descripción: Conexión a cada uno de los nodos para ejecutar el scrip de usuarios.
 

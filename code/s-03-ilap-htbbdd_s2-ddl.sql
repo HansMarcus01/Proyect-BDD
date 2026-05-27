@@ -1,4 +1,4 @@
---@Autor: Hansel Yael Tepal Briseño
+--@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
 --@Fecha creación: 26/05/2026
 --@Descripción: Definicion del esquma de fragmentación para el sitio EA (HTBBDDbdd_s2)
 -- y de sus respectivas secuencias
@@ -140,9 +140,9 @@ create sequence tipo_monitor_R_HTBBDD_S2_seq
     cache 20
     order;
 
-prompt creando el fragmento 3 de la tabla laptop
-drop table if exists laptop_F3_HTBBDD_S2 cascade constraints;
-create table laptop_F3_HTBBDD_S2(
+prompt creando el fragmento 5 de la tabla laptop
+drop table if exists laptop_F5_HTBBDD_S2 cascade constraints;
+create table laptop_F5_HTBBDD_S2(
     laptop_id number(10,0) not null,
     num_serie varchar2(18) not null,
     cantidad_ram number(6,0) not null,
@@ -152,20 +152,20 @@ create table laptop_F3_HTBBDD_S2(
     tipo_almacenamiento_id number(10,0) not null,
     tipo_monitor_id number(10,0) not null,
     laptop_reemplazo_id number(10,0),
-    constraint laptop_F3_HTBBDD_S2_pk primary key (laptop_id),
-    constraint laptop_F3_HTBBDD_S2_tipo_procesador_id_fk foreign key (tipo_procesador_id)
+    constraint laptop_F5_HTBBDD_S2_pk primary key (laptop_id),
+    constraint laptop_F5_HTBBDD_S2_tipo_procesador_id_fk foreign key (tipo_procesador_id)
         references tipo_procesador_R_HTBBDD_S2(tipo_procesador_id),
-    constraint laptop_F3_HTBBDD_S2_tipo_tarjeta_video_id_fk foreign key (tipo_tarjeta_video_id)
+    constraint laptop_F5_HTBBDD_S2_tipo_tarjeta_video_id_fk foreign key (tipo_tarjeta_video_id)
         references tipo_tarjeta_video_R_HTBBDD_S2(tipo_tarjeta_video_id),
-    constraint laptop_F3_HTBBDD_S2_tipo_almacenamiento_id_fk foreign key (tipo_almacenamiento_id)
+    constraint laptop_F5_HTBBDD_S2_tipo_almacenamiento_id_fk foreign key (tipo_almacenamiento_id)
         references tipo_almacenamiento_R_HTBBDD_S2(tipo_almacenamiento_id),
-    constraint laptop_F3_HTBBDD_S2_tipo_monitor_id_fk foreign key (tipo_monitor_id)
+    constraint laptop_F5_HTBBDD_S2_tipo_monitor_id_fk foreign key (tipo_monitor_id)
         references tipo_monitor_R_HTBBDD_S2(tipo_monitor_id)
 );
 
-prompt creando la secuencia para la tabla laptop del fragmento 3
-drop sequence if exists laptop_F3_HTBBDD_S2_seq;
-create sequence laptop_F3_HTBBDD_S2_seq
+prompt creando la secuencia para la tabla laptop del fragmento 5
+drop sequence if exists laptop_F5_HTBBDD_S2_seq;
+create sequence laptop_F5_HTBBDD_S2_seq
     start with 1
     increment by 1
     nomaxvalue

@@ -1,4 +1,4 @@
---@Autor: Hansel Yael Tepal Briseño
+--@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
 --@Fecha creación: 26/05/2026
 --@Descripción: Definicion del esquma de fragmentación para el sitio NO (HTBBDDbdd_s1)
 -- y de sus respectivas secuencias
