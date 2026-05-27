@@ -54,7 +54,9 @@
 \begin{document}
 \maketitle
 
-% \newpage
+\newpage
+
+\section{Tabla de Fragmentación}
 
 \begin{longtable}{|p{5.2cm}|p{11cm}|}
     \hline
@@ -148,5 +150,89 @@
     \hline
     \text{Tipo\_Monitor\_r\_} \newline \text{LSIBDD\_S2} & \textbf{TABLA REPLICADA} \\
     \hline
+\end{longtable}
+
+\section{Modelos Relacionales}
+
+\section{Tabla de Asignación de Sitios}
+
+\begin{longtable}{|p{5cm}|p{8cm}|p{3cm}|}
+\hline
+\textbf{Nombre de la tabla Padre} & \textbf{Nombre de la Tabla Hija} & \textbf{Sitio} \\
+\hline
+\text{sucursal\_f1\_htbbdd\_s1} & \text{sucursal\_venta\_f1\_htbbdd\_s1} & NO \\
+\hline
+\text{sucursal\_f1\_htbbdd\_s1} & \text{sucursal\_taller\_f1\_htbbdd\_s1} & NO \\
+\hline
+\text{sucursal\_f2\_htbbdd\_s2} & \text{sucursal\_venta\_f2\_htbbdd\_s2} & EA \\
+\hline
+\text{sucursal\_f2\_htbbdd\_s2} & \text{sucursal\_taller\_f2\_htbbdd\_s2} & EA \\
+\hline
+\text{sucursal\_f3\_lsibdd\_s1} & \text{sucursal\_venta\_f3\_lsibdd\_s1} & WS \\
+\hline
+\text{sucursal\_f3\_lsibdd\_s1} & \text{sucursal\_taller\_f3\_lsibdd\_s1} & WS \\
+\hline
+\text{sucursal\_f4\_lsibdd\_s2} & \text{sucursal\_venta\_f4\_lsibdd\_s2} & SO \\
+\hline
+\text{sucursal\_f4\_lsibdd\_s2} & \text{sucursal\_taller\_f4\_lsibdd\_s2} & SO \\
+\hline
+\text{sucursal\_taller\_f1\_} \newline \text{htbbdd\_s1}& \text{servicio\_laptop\_f1\_htbbdd\_s1} & NO \\
+\hline
+\text{sucursal\_taller\_f2\_} \newline \text{htbbdd\_s2} & \text{servicio\_laptop\_f2\_htbbdd\_s2} & EA \\
+\hline
+\text{sucursal\_taller\_f3\_} \newline \text{lsibdd\_s1} & \text{servicio\_laptop\_f3\_lsibdd\_s1} & WS \\
+\hline
+\text{sucursal\_taller\_f4\_} \newline \text{lsibdd\_s2} & \text{servicio\_laptop\_f4\_lsibdd\_s2} & SO \\
+\hline
+\text{tipo\_procesador\_r\_} \newline \text{htbbdd\_s1} & \text{laptop\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{tipo\_procesador\_r\_} \newline \text{htbbdd\_s2} & \text{laptop\_f5\_htbbdd\_s2} & EA \\
+\hline
+\text{tipo\_procesador\_r\_} \newline \text{lsibdd\_s1} & \text{laptop\_f4\_lsibdd\_s1} & WS \\
+\hline
+\text{tipo\_procesador\_r\_} \newline \text{lsibdd\_s2} & \text{laptop\_f3\_lsibdd\_s2} & SO \\
+\hline
+\text{tipo\_tarjeta\_video\_r\_} \newline \text{htbbdd\_s1} & \text{laptop\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{tipo\_tarjeta\_video\_r\_} \newline \text{htbbdd\_s2} & \text{laptop\_f5\_htbbdd\_s2} & EA \\
+\hline
+\text{tipo\_tarjeta\_video\_r\_} \newline \text{lsibdd\_s1} & \text{laptop\_f4\_lsibdd\_s1} & WS \\
+\hline
+\text{tipo\_tarjeta\_video\_r\_} \newline \text{lsibdd\_s2} & \text{laptop\_f3\_lsibdd\_s2} & SO \\
+\hline
+\text{tipo\_almacenamiento\_r\_} \newline \text{htbbdd\_s1} & \text{laptop\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{tipo\_almacenamiento\_r\_} \newline \text{htbbdd\_s2} & \text{laptop\_f5\_htbbdd\_s2} & EA \\
+\hline
+\text{tipo\_almacenamiento\_r\_} \newline \text{lsibdd\_s1} & \text{laptop\_f4\_lsibdd\_s1} & WS \\
+\hline
+\text{tipo\_almacenamiento\_r\_} \newline \text{lsibdd\_s2} & \text{laptop\_f3\_lsibdd\_s2} & SO \\
+\hline
+\text{tipo\_monitor\_r\_} \newline \text{htbbdd\_s1} & \text{laptop\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{tipo\_monitor\_r\_} \newline \text{htbbdd\_s2} & \text{laptop\_f5\_htbbdd\_s2} & EA \\
+\hline
+\text{tipo\_monitor\_r\_} \newline \text{lsibdd\_s1} & \text{laptop\_f4\_lsibdd\_s1} & WS \\
+\hline
+\text{tipo\_monitor\_r\_} \newline \text{lsibdd\_s2} & \text{laptop\_f3\_lsibdd\_s2} & SO \\
+\hline
+\text{laptop\_f1\_lsibdd\_s2} & \text{laptop\_f3\_lsibdd\_s2} & SO \\
+\hline
+\text{laptop\_f1\_lsidd\_s2} & \text{servicio\_laptop\_f4\_lsibdd\_s2} & SO \\
+\hline
+\text{laptop\_inventario\_f1\_} \newline \text{lsibdd\_s1} & \text {laptop\_f4\_lsibdd\_s1} & WS \\
+\hline
+\text{laptop\_inventario\_f2\_} \newline \text{htbbdd\_s1} & \text {laptop\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{lapptop\_inventario\_f2\_} \newline \text{htbbdd\_s1} & \text{historico\_status\_laptop\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{status\_laptop} & \text{historico\_status\_laptop\_f1\_htbbdd\_s2} & EA \\
+\hline
+\text{status\_laptop} & \text{historico\_status\_laptop\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{status\_laptop} & \text{laptop\_inventario\_f2\_htbbdd\_s1} & NO \\
+\hline
+\text{status\_laptop} & \text{laptop\_inventario\_f1\_lsibdd\_s1} & WS \\
+\hline
 \end{longtable}
 \end{document}
