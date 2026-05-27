@@ -4,8 +4,8 @@
 -- y de sus respectivas secuencias
 
 prompt creadno el fragmento 1 de la tabla sucursal
-drop table if exists suscursal_F1_HTBBDD_S1 cascade constraints;
-create table suscursal_F1_HTBBDD_S1(
+drop table if exists sucursal_F1_HTBBDD_S1 cascade constraints;
+create table sucursal_F1_HTBBDD_S1(
     sucursal_id number(10,0) not null,
     es_taller boolean not null,
     es_venta boolean not null,
