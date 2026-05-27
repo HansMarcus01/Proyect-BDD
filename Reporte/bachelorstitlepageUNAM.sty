@@ -1,0 +1,74 @@
+\ProvidesPackage{bachelorstitlepageUNAM}[20161012]
+\RequirePackage{graphicx}
+\@ifpackageloaded{geometry}{}{\RequirePackage[pass]{geometry}}
+
+\newcommand*{\faculty}[1]{\gdef\@faculty{#1}}
+\newcommand*{\@faculty}{\texttt{\string\faculty} Faculty or Institute. Please fix this.}
+\newcommand*{\degree}[1]{\gdef\@degree{#1}}
+\newcommand*{\@degree}{\texttt{\string\degree} degree currently not set. Please fix this.}
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand*{\@supervisor}{\texttt{\string\supervisor} supervisor currently not set. Please fix this.}
+\newcommand*{\cityandyear}[1]{\gdef\@cityandyear{#1}}
+\newcommand*{\@cityandyear}{\texttt{\string\cityandyear} city and year currently not set. Please fix this.}
+\newcommand*{\logouni}[1]{\gdef\@logouni{#1}}
+\newcommand*{\@logouni}{example-image-a}
+\newcommand*{\logofac}[1]{\gdef\@logofac{#1}}
+\newcommand*{\@logofac}{example-image-b}
+
+\renewcommand*{\maketitle}{%
+	\begin{titlepage}
+		\newgeometry{left=2.5cm,right=2.5cm,bottom=2.5cm,top=2cm}
+
+		% Logos en las esquinas superiores (UNAM e INGENIERÍA)
+		\noindent
+		\begin{minipage}[t]{0.5\textwidth}
+			\raggedright
+			\IfFileExists{\@logouni}{\includegraphics[height=2.8cm]{\@logouni}}{\rule{2.8cm}{2.8cm}}
+		\end{minipage}%
+		\begin{minipage}[t]{0.5\textwidth}
+			\raggedleft
+			\IfFileExists{\@logofac}{\includegraphics[height=2.8cm]{\@logofac}}{\rule{2.8cm}{2.8cm}}
+		\end{minipage}%
+
+		\vspace{0.8cm}
+		\begin{center}
+			% Encabezados institucionales estrictos de la UNAM
+			{\large\bfseries\scshape Universidad Nacional Aut\'onoma de M\'exico\par}
+			\vspace{0.3cm}
+			{\large\scshape\@faculty\unskip\strut\par}
+
+			\vspace{0.5cm}
+			\hrule height 2pt
+			\vspace{0.1cm}
+			\hrule height 1pt
+
+			\vspace{1.5cm}
+			% Nombre de la Materia en grande
+			{\Large\bfseries\scshape \@degree\par}
+
+			\vspace{1.5cm}
+			% Título del proyecto e indicación de la entrega
+			{\large\bfseries \@title\par}
+			\vspace{0.5cm}
+			{\large\scshape Proyecto Final -- Parte 1\par}
+
+			\vspace{2.5cm}
+
+			% Bloque de autores/integrantes y profesor
+			\begin{minipage}{0.8\textwidth}
+				\centering
+				\textbf{Presenta(n):}\\[0.2cm]
+				{\scshape\@author}\\[1.2cm]
+				\textbf{Profesor:}\\[0.2cm]
+				{\scshape\@supervisor}
+			\end{minipage}
+
+			\vfill
+			% Pie de página con fecha y semestre
+			{\small Semestre 2026-2\par}
+			\vspace{0.4cm}
+			{\small\@cityandyear\par}
+		\end{center}
+	\end{titlepage}
+}
+\endinput

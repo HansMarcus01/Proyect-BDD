@@ -1,0 +1,204 @@
+\documentclass[letterpaper,12pt,oneside]{article}
+\usepackage[top=1in, left=1.25in, right=1.25in, bottom=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{bachelorstitlepageUNAM}
+
+% =========================================================================
+% METADATOS DE LA CARÁTULA (Ajustados al PDF Oficial del Proyecto)
+% =========================================================================
+\author{Tepal Briseño Hansel Yael \\ Salazar Islas Luis Daniel}
+\title{ EMPLEADA PARA ADMINISTRAR EL NEGOCIO DE LA EMPRESA iLap}
+\faculty{Facultad de Ingeniería}
+\degree{BASES DE DATOS DISTRIBUIDAS}
+\supervisor{Prof. Jorge A. Rodríguez Campos}
+\cityandyear{Ciudad Universitaria, CDMX, 25 de mayo de 2026}
+
+% Asegúrate de que estas rutas a las imágenes sean correctas en tu entorno de compilación
+\logouni{img/UNAM.png}
+\logofac{img/UNAM_INGENIERIA.png}
+% =========================================================================
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{setspace}
+
+\graphicspath{{./img/}{./figs/}}
+
+\lstset{
+    language=VHDL,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    morekeywords={architecture,entity,begin,end,port,is,of,not,and,or},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    framerule=0.8pt,
+    rulecolor=\color{black},
+    xleftmargin=1em,
+    xrightmargin=1em,
+    breaklines=true
+}
+
+\begin{document}
+\maketitle
+
+%Tabla de expresiones de fragmento
+
+% \begin{longtable}{|p{5cm}|p{8cm}|p{3cm}|}
+% \hline
+% \textbf{Nombre del fragmento} & \textbf{Expresión del fragmento} & \textbf{Ubicación del fragmento (N1 o N2)} \\
+% \hline
+% \text{f\_htb\_pais\_1} & \(\sigma_{p1} (pais)\) \newline \small{ $p1$: \(region = \text{'A'}\)} & N1 \\
+% \hline
+% \text{f\_htb\_pais\_2} & \(\sigma_{p2} (pais)\) \newline \small{ $p2$: \(region = \text{'B'}\)} & N2 \\
+% \hline
+% \text{f\_htb\_oficina\_1} & \(oficina \ltimes_{p3} f\_htb\_pais\_1\) \newline \small{ $p3$: \(o.pais\_id = p.pais\_id\)} & N1 \\
+% \hline
+% \text{f\_htb\_oficina\_2} & \(oficina \ltimes_{p4} f\_htb\_pais\_2\) \newline \small{ $p4$: \(o.pais\_id = p.pais\_id\)} & N2 \\
+% \hline
+% \text{f\_htb\_proyecto\_1} & \(proyecto \ltimes_{p5} f\_htb\_oficina\_1\) \newline \small{ $p5$: \(p.oficina\_id = o.oficina\_id\)} & N1 \\
+% \hline
+% \text{proyecto\_2} & \(proyecto \ltimes_{p6} f\_htb\_oficina\_2\) \newline \small{ $p6$: \(p.oficina\_id = o.oficina\_id\)} & Pivote \\
+% \hline
+% \text{f\_htb\_proyecto\_2} & \(\sigma_{p7} (proyecto\_2)\) \newline \small{ $p7$: fecha\_inicio <= to\_date(31-12-2009 23:59:59, \text{'dd-mm-yyyy hh24:mi:ss'}) \text{and}  \text{fecha\_fin} is not null} & N2 \\
+% \hline
+% \text{f\_htb\_proyecto\_3} & \(\sigma_{p8} (proyecto\_2)\) \newline \small{$p8$: fecha\_inicio > to\_date(31-12-2009 23:59:59, 'dd-mm-yyyy hh24:mi:ss') or (fecha\_inicio <= to\_date(31-12-2009 23:59:59, \text{'dd-mm-yyyy hh24:mi:ss'}) \text{ and } \text{fecha\_fin is null})} & N2 \\
+% \hline
+% \text{f\_htb\_proyecto\_pdf\_1} & \(\sigma_{p9} (proyecto\_pdf)\) \newline \small{$p9$: tamanio <= 3} & N1 \\
+% \hline
+% \text{f\_htb\_proyecto\_pdf\_2} & \(\sigma_{p10} (proyecto\_pdf)\) \newline \small{$p10$: tamanio > 3} & N2 \\
+% \hline
+% \text{f\_htb\_empleado\_1} & \(\Pi_{C1} (empleado)\) \newline \small{ $C1$: e.empleado\_id, foto, num\_cuenta} & N2 \\
+% \hline
+% \text{empleado\_2} & \(\Pi_{C2} (empleado)\) \newline \small{$C2$: e.empleado\_id, nombre, ap\_pat, ap\_mat, RFC, email} & pivote \\
+% \hline
+% \text{f\_htb\_empleado\_2} & \(\sigma_{p11} (empleado\_2)\) \newline \small{$p11$: substr(RFC,1,1) between 'A' and 'M'} & N1 \\
+% \hline
+% \text{f\_htb\_empleado\_3} & \(\sigma_{p12} (empleado\_2)\) \newline \small{$p12$: substr(RFC,1,1) between 'N' and 'Z'} & N2 \\
+% \hline
+% \text{f\_htb\_pago\_1} & \(pago \ltimes_{p13} f\_htb\_empleado\_2\) \newline \small{$p13$: p.empleado\_id = e.empleado\_id} & N1 \\
+% \hline
+% \text{f\_htb\_pago\_2} & \(pago \ltimes_{p14} f\_htb\_empleado\_3\) \newline \small{$p14$: p.empleado\_id = e.empleado\_id} & N2 \\
+% \hline
+% \end{longtable}
+
+% \newpage
+
+\begin{longtable}{|p{5.2cm}|p{11cm}|}
+    \hline
+    \textbf{Nombre del fragmento} & \textbf{Expresión algebraica} \\
+    \hline
+    % \text{pais} & \(\text{pais} = \text{f\_htb\_pais\_1} \cup \text{f\_htb\_pais\_2}\) \\
+    % \hline
+    % \text{oficina} & \(\text{oficina} = \text{f\_htb\_oficina\_1} \cup \text{f\_htb\_oficina\_2}\) \\
+    % \hline
+    % \text{proyecto} & \(\text{proyecto} = \text{f\_htb\_proyecto\_1} \cup \text{f\_htb\_proyecto\_2} \cup \text{f\_htb\_proyecto\_3}\)  \\
+    % \hline
+    % \text{proyecto\_pdf} & \(\text{proyecto\_pdf} = \text{f\_htb\_proyecto\_pdf\_1} \cup \text{f\_htb\_proyecto\_pdf\_2}\) \\
+    % \hline
+    % \text{empleado} & \(\text{empleado} = \text{f\_htb\_empleado\_1} \bowtie (\text{f\_htb\_empleado\_2} \cup \text{f\_htb\_empleado\_3})\)  \\
+    % \hline
+    % \text{pago} & \(\text{pago} = \text{f\_htb\_pago\_1} \cup \text{f\_htb\_pago\_2}\) \\
+    % \hline
+    \text{Sucursal\_F1\_HTB\_S1} & \text{Sucursal\_F1\_HTB\_S1} = \(\sigma_{p1} (Sucursal)\) \newline \small{ $p1$: \((Es\_Venta \text{ and } Es\_Taller = 1) \text{ or } \text{substr(clave,3,2) = 'NO'}\)} \\
+    \hline
+    \text{S2'} & \text{S2'} = \(\sigma_{\neg p1} (Sucursal)\) \newline \small{ $\neg p1$: \(\text{not } (Es\_Venta \text{ and } Es\_Taller = 1) \newline \text{ and } \text{substr(clave,3,2)} \neq \text{'NO'}\)} \\
+    \hline
+    \text{Sucursal\_F2\_HTB\_S2} & \text{Sucursal\_F2\_HTB\_S2} = \(\sigma_{p2} (S2')\) \newline \small{ $p2$: \(substr(clave,3,2) = 'EA'\)} \\
+    \hline
+    \text{Sucursal\_F3\_LSI\_S1} & \text{Sucursal\_F3\_LSI\_S1} = \(\sigma_{p3} (S2')\) \newline \small{ $p3$: \(substr(clave,3,2) = 'WS'\)} \\
+    \hline
+    \text{Sucursal\_F4\_LSI\_S2} & \text{Sucursal\_F4\_LSI\_S2} = \(\sigma_{p4} (S2')\) \newline \small{ $p4$: \(substr(clave,3,2) = 'SO'\)} \\
+    \hline
+    \text{Sucursal\_Venta\_F1\_} \newline \text{HTB\_S1} & \text{Sucursal\_Venta\_F1\_HTB\_S1} =  \newline \(Sucursal\_Venta \ltimes_{p5} Sucursal\_F1\_HTB\_S1\) \newline \small{ $p5$: \(sv.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Sucursal\_Venta\_F2\_} \newline \text{HTB\_S2} & \text{Sucursal\_Venta\_F2\_HTB\_S2} = \newline \(Sucursal\_Venta \ltimes_{p6} Sucursal\_F2\_HTB\_S2\) \newline \small{ $p6$: \(sv.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Sucursal\_Venta\_F3\_} \newline \text{LSI\_S1} & \text{Sucursal\_Venta\_F3\_LSI\_S1} = \newline \(Sucursal\_Venta \ltimes_{p7} Sucursal\_F3\_LSI\_S1\) \newline \small{ $p7$: \(sv.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Sucursal\_Venta\_F4\_} \newline \text{LSI\_S2} & \text{Sucursal\_Venta\_F4\_LSI\_S2} = \newline \(Sucursal\_Venta \ltimes_{p8} Sucursal\_F4\_LSI\_S2\) \newline \small{ $p8$: \(sv.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Sucursal\_Taller\_F1\_} \newline \text{HTB\_S1} & \text{Sucursal\_Taller\_F1\_HTB\_S1} = \newline \(Sucursal\_Taller \ltimes_{p9} Sucursal\_F1\_HTB\_S1\) \newline \small{ $p9$: \(st.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Sucursal\_Taller\_F2\_} \newline \text{HTB\_S2} & \text{Sucursal\_Taller\_F2\_HTB\_S2} = \newline \(Sucursal\_Taller \ltimes_{p10} Sucursal\_F2\_HTB\_S2\) \newline \small{ $p10$: \(st.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Sucursal\_Taller\_F3\_} \newline \text{LSI\_S1} & \text{Sucursal\_Taller\_F3\_LSI\_S1} = \newline \(Sucursal\_Taller \ltimes_{p11} Sucursal\_F3\_LSI\_S1\) \newline \small{ $p11$: \(st.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Sucursal\_Taller\_F4\_} \newline \text{LSI\_S2} & \text{Sucursal\_Taller\_F4\_LSI\_S2} = \newline \(Sucursal\_Taller \ltimes_{p12} Sucursal\_F4\_LSI\_S2\) \newline \small{ $p12$: \(st.sucursal\_id = s.sucursal\_id\)} \\
+    \hline
+    \text{Laptop\_F1\_LSI\_S2} & \text{Laptop\_F1\_LSI\_S2} = \(\Pi_{C1} (Laptop)\) \newline \small{ $C1$: l.laptop\_id, foto}\\
+    \hline
+    \text{L2'} & \text{L2'} = \(\Pi_{C2} (Laptop)\) \newline \small{ $C2$: l.laptop\_id, l.num\_serie, l.cantidad\_ram, \newline l.caracteristicas\_extras, l.tipo\_tarjeta\_video\_id, \newline l.tipo\_procesador\_id, l.tipo\_almacenamiento\_id, \newline  l.tipo\_monitor\_id, l.laptop\_reemplazo\_id} \\
+    \hline
+    \text{Laptop\_F2\_HTB\_S1} & \text{Laptop\_F2\_HTB\_S1} = \(\sigma_{p13} (L2')\) \newline \small{ $p13$: substr(num\_serie,1,1) between '0' and '1'} \\
+    \hline
+    \text{Laptop\_F3\_LSI\_S2} & \text{Laptop\_F3\_LSI\_S2} = \(\sigma_{p14} (L2')\) \newline \small{ $p14$: substr(num\_serie,1,1) between '2' and '3'} \\
+    \hline
+    \text{Laptop\_F4\_LSI\_S1} & \text{Laptop\_F4\_LSI\_S1} = \(\sigma_{p15} (L2')\) \newline \small{ $p15$: substr(num\_serie,1,1) between '4' and '5'} \\
+    \hline
+    \text{Laptop\_F5\_HTB\_S2} & \text{Laptop\_F5\_HTB\_S2} = \(\sigma_{p16} (L2')\) \newline \small{ $p16$: substr(num\_serie,1,1) between '6' and '9'} \\
+    \hline
+    \text{Laptop\_Inventario\_F1\_} \newline \text{LSI\_S1} & \text{Laptop\_Inventario\_F1\_LSI\_S1} = \newline \(\Pi_{C3} (Laptop\_Inventario)\) \newline \small{ $C3$: li.laptop\_id, li.RFC\_cliente, li.num\_tarjeta }\\
+    \hline
+    \text{Laptop\_Inventario\_F2\_} \newline \text{HTB\_S1} & \text{Laptop\_Inventario\_F2\_HTB\_S1} = \newline \(\Pi_{C3} (Laptop\_Inventario)\) \newline \small{ $C3$: li.laptop\_id, li.fecha\_status, \newline li.sucursal\_id, li.status\_laptop\_id }\\
+    \hline
+    \text{Historico\_Status\_Laptop\_} \newline \text{F1\_HTB\_S2} & \text{Historico\_Status\_Laptop\_F1\_HTB\_S2} = \newline \(\sigma_{p17} (Historico\_Status\_Laptop)\) \newline \small{ $p17$: fecha\_status < to\_date('01-01-2010', 'DD-MM-YYYY')} \\
+    \hline
+    \text{Historico\_Status\_Laptop\_} \newline \text{F2\_HTB\_S1} & \text{Historico\_Status\_Laptop\_F2\_HTB\_S1} = \newline \(\sigma_{p18} (Historico\_Status\_Laptop)\) \newline \small{ $p18$: fecha\_status >= to\_date('01-01-2010', 'DD-MM-YYYY')} \\
+    \hline
+    \text{Servicio\_Laptop\_F1\_} \newline \text{HTB\_S1} & \text{Servicio\_Laptop\_F1\_HTB\_S1} = \newline \(Servicio\_Laptop \ltimes_{p19} Sucursal\_Taller\_F1\_HTB\_S1\) \newline \small{ $p19$: sl.sucursal\_id = sv.sucursal\_id} \\
+    \hline
+    \text{Servicio\_Laptop\_F2\_} \newline \text{HTB\_S2} & \text{Servicio\_Laptop\_F2\_HTB\_S2} = \newline \(Servicio\_Laptop \ltimes_{p20} Sucursal\_Taller\_F2\_HTB\_S2\) \newline \small{ $p20$: sl.sucursal\_id = sv.sucursal\_id} \\
+    \hline
+    \text{Servicio\_Laptop\_F3\_} \newline \text{LSI\_S1} & \text{Servicio\_Laptop\_F3\_LSI\_S1} = \newline \(Servicio\_Laptop \ltimes_{p21} Sucursal\_Taller\_F3\_LSI\_S1\) \newline \small{ $p21$: sl.sucursal\_id = sv.sucursal\_id} \\
+    \hline
+    \text{Servicio\_Laptop\_F4\_} \newline \text{LSI\_S2} & \text{Servicio\_Laptop\_F4\_LSI\_S2} = \newline \(Servicio\_Laptop \ltimes_{p22} Sucursal\_Taller\_F4\_LSI\_S2\) \newline \small{ $p22$: sl.sucursal\_id = sv.sucursal\_id} \\
+    \hline
+    \text{Status\_Laptop} & \textbf{COPIA MANUAL} \\
+    \hline
+    \text{Tipo\_Procesador\_r\_} \newline \text{HTB\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Procesador\_r\_} \newline \text{HTB\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Procesador\_r\_} \newline \text{LSI\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Procesador\_r\_} \newline \text{LSI\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Tarjeta\_Video\_r\_} \newline \text{HTB\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Tarjeta\_Video\_r\_} \newline \text{HTB\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Tarjeta\_Video\_r\_} \newline \text{LSI\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Tarjeta\_Video\_r\_} \newline \text{LSI\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Almacenamiento\_r\_} \newline \text{HTB\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Almacenamiento\_r\_} \newline \text{HTB\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Almacenamiento\_r\_} \newline \text{LSI\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Almacenamiento\_r\_} \newline \text{LSI\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Monitor\_r\_} \newline \text{HTB\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Monitor\_r\_} \newline \text{HTB\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Monitor\_r\_} \newline \text{LSI\_S1} & \textbf{TABLA REPLICADA} \\
+    \hline
+    \text{Tipo\_Monitor\_r\_} \newline \text{LSI\_S2} & \textbf{TABLA REPLICADA} \\
+    \hline
+\end{longtable}
+\end{document}
