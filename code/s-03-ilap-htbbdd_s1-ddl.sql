@@ -24,7 +24,7 @@ create sequence sucursal_F1_HTBBDD_S1_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento 1 de la tabla sucursal_venta
@@ -80,7 +80,7 @@ create sequence tipo_procesador_R_HTBBDD_S1_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento replicado 1 de la tabla tipo_tarjeta_video
@@ -99,7 +99,7 @@ create sequence tipo_tarjeta_video_R_HTBBDD_S1_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento replicado 1 de la tabla tipo_almacenamiento
@@ -118,7 +118,7 @@ create sequence tipo_almacenamiento_R_HTBBDD_S1_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento replicado 1 de la tabla tipo_monitor
@@ -137,8 +137,29 @@ create sequence tipo_monitor_R_HTBBDD_S1_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
+
+prompt creando la tabla Status_laptop en HTBBDDbdd_s1
+drop table if exists status_laptop cascade constraints;
+create table status_laptop (
+    status_laptop_id number(10,0) not null,
+    clave varchar2(40) not null,
+    descripcion varchar2(200) not null,
+    constraint status_laptop_pk primary key (status_laptop_id)
+);
+
+prompt creando el fragmento 2 de la tabla laptop_inventario
+drop table if exists laptop_inventario_F2_HTBBDD_S1 cascade constraints;
+create table laptop_inventario_F2_HTBBDD_S1(
+    laptop_id number(10,0) not null,
+    fecha_status date not null,
+    sucursal_id number(10,0) not null,
+    status_laptop_id number(10,0) not null,
+    constraint laptop_inventario_F2_HTBBDD_S1_pk primary key (laptop_id),
+    constraint laptop_inventario_F2_HTBBDD_S1_laptop_id_fk foreign key (status_laptop_id)
+        references status_laptop(status_laptop_id)
+);
 
 prompt creando el fragmento 2 de la tabla laptop
 drop table if exists laptop_F2_HTBBDD_S1 cascade constraints;
@@ -160,9 +181,9 @@ create table laptop_F2_HTBBDD_S1(
     constraint laptop_F2_HTBBDD_S1_tipo_almacenamiento_id_fk foreign key (tipo_almacenamiento_id)
         references tipo_almacenamiento_R_HTBBDD_S1(tipo_almacenamiento_id),
     constraint laptop_F2_HTBBDD_S1_tipo_monitor_id_fk foreign key (tipo_monitor_id)
-        references tipo_monitor_R_HTBBDD_S1(tipo_monitor_id)
---  constraint laptop_F2_HTBBDD_S1_laptop_reemplazo_id_fk foreign key (laptop_reemplazo_id)
---      references laptop_inventario_F2_HTBBDD_S1(laptop_id)
+        references tipo_monitor_R_HTBBDD_S1(tipo_monitor_id),
+    constraint laptop_F2_HTBBDD_S1_laptop_reemplazo_id_fk foreign key (laptop_reemplazo_id)
+        references laptop_inventario_F2_HTBBDD_S1(laptop_id)
 );
 
 prompt creando la secuencia para la tabla laptop del fragmento 2
@@ -172,17 +193,9 @@ create sequence laptop_F2_HTBBDD_S1_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
-prompt creando la tabla Status_laptop en HTBBDDbdd_s1
-drop table if exists status_laptop cascade constraints;
-create table status_laptop (
-    status_laptop_id number(10,0) not null,
-    clave varchar2(40) not null,
-    descripcion varchar2(200) not null,
-    constraint status_laptop_pk primary key (status_laptop_id)
-);
 
 prompt creando el fragmento 2 de la tabla historico_status_laptop
 drop table if exists historico_status_laptop_F2_HTBBDD_S1 cascade constraints;
@@ -205,17 +218,5 @@ create sequence historico_status_laptop_F2_HTBBDD_S1_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
-
-prompt creando el fragmento 2 de la tabla laptop_inventario
-drop table if exists laptop_inventario_F2_HTBBDD_S1 cascade constraints;
-create table laptop_inventario_F2_HTBBDD_S1(
-    laptop_id number(10,0) not null,
-    fecha_status date not null,
-    sucursal_id number(10,0) not null,
-    status_laptop_id number(10,0) not null,
-    constraint laptop_inventario_F2_HTBBDD_S1_pk primary key (laptop_id),
-    constraint laptop_inventario_F2_HTBBDD_S1_laptop_id_fk foreign key (status_laptop_id)
-        references status_laptop(status_laptop_id)
-);

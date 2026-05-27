@@ -24,7 +24,7 @@ create sequence sucursal_F2_HTBBDD_S2_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento 2 de la tabla sucursal_venta
@@ -80,7 +80,7 @@ create sequence tipo_procesador_R_HTBBDD_S2_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento replicado 2 de la tabla tipo_tarjeta_video
@@ -99,7 +99,7 @@ create sequence tipo_tarjeta_video_R_HTBBDD_S2_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento replicado 2 de la tabla tipo_almacenamiento
@@ -118,7 +118,7 @@ create sequence tipo_almacenamiento_R_HTBBDD_S2_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento replicado 2 de la tabla tipo_monitor
@@ -137,7 +137,7 @@ create sequence tipo_monitor_R_HTBBDD_S2_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando el fragmento 5 de la tabla laptop
@@ -170,7 +170,7 @@ create sequence laptop_F5_HTBBDD_S2_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
 
 prompt creando la tabla Status_laptop en HTBBDDbdd_s2
@@ -203,5 +203,5 @@ create sequence historico_status_laptop_F1_HTBBDD_S2_seq
     increment by 1
     nomaxvalue
     nocycle
-    cache 20
+    cache 5
     order;
