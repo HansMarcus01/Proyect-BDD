@@ -14,7 +14,9 @@ create table sucursal_F2_HTB_S2(
     url varchar2(200) not null,
     nombre varchar2(40) not null,
     clave varchar2(10) not null,
-    constraint sucursal_F2_HTB_S2_pk primary key (sucursal_id)
+    constraint sucursal_F2_HTB_S2_pk primary key (sucursal_id),
+    constraint sucursal_F2_HTB_S2_uk_clave unique (clave),
+    constraint sucursal_F2_HTB_S2_uk_url unique (url)
 );
 
 prompt creando la secuencia para la tabla sucursal del fragmento 2
@@ -45,6 +47,7 @@ create table sucursal_taller_F2_HTB_S2(
     dia_descanso number(1,0) not null,
     telefono_atencion varchar2(20) not null,
     constraint sucursal_taller_F2_HTB_S2_pk primary key (sucursal_id),
+    constraint sucursal_taller_F2_HTB_S2_telefono_atencion_uk unique (telefono_atencion),
     constraint sucursal_taller_F2_HTB_S2_dia_descanso_chk check (dia_descanso between 1 and 7),
     constraint sucursal_taller_F2_HTB_S2_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_F2_HTB_S2(sucursal_id)
@@ -60,6 +63,7 @@ create table servicio_laptop_F2_HTB_S2(
     factura blob not null,
     sucursal_id number(10,0) not null,
     constraint servicio_laptop_F2_HTB_S2_pk primary key (laptop_id, num_servicio),
+    constraint servicio_laptop_F2_HTB_S2_importe_chk check (importe > 0),
     constraint servicio_laptop_F2_HTB_S2_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_taller_F2_HTB_S2(sucursal_id)
 );
@@ -153,6 +157,7 @@ create table laptop_F5_HTB_S2(
     tipo_monitor_id number(10,0) not null,
     laptop_reemplazo_id number(10,0),
     constraint laptop_F5_HTB_S2_pk primary key (laptop_id),
+    constraint laptop_F5_HTB_S2_num_serie_uk unique (num_serie),
     constraint laptop_F5_HTB_S2_tipo_procesador_id_fk foreign key (tipo_procesador_id)
         references tipo_procesador_R_HTB_S2(tipo_procesador_id),
     constraint laptop_F5_HTB_S2_tipo_tarjeta_video_id_fk foreign key (tipo_tarjeta_video_id)
@@ -176,7 +181,7 @@ create sequence laptop_F5_HTB_S2_seq
 prompt creando la tabla Status_laptop en HTB_s2
 drop table if exists status_laptop cascade constraints;
 create table status_laptop (
-    status_laptop_id number(10,0) not null,
+    status_laptop_id number(5,0) not null,
     clave varchar2(40) not null,
     descripcion varchar2(200) not null,
     constraint status_laptop_pk primary key (status_laptop_id)
@@ -188,10 +193,8 @@ create table historico_status_laptop_F1_HTB_S2(
     historico_status_laptop_id number(10,0) not null,
     fecha_status date not null,
     laptop_id number(10,0) not null,
-    status_laptop_id number(10,0) not null,
+    status_laptop_id number(5,0) not null,
     constraint historico_status_laptop_F1_HTB_S2_pk primary key (historico_status_laptop_id),
-    constraint historico_status_laptop_F1_HTB_S2_laptop_id_fk foreign key (laptop_id)
-        references laptop_F1_HTB_S2(laptop_id),
     constraint historico_status_laptop_F1_HTB_S2_status_laptop_id_fk foreign key (status_laptop_id)
         references status_laptop(status_laptop_id)
 );

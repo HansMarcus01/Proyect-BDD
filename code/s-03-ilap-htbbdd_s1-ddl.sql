@@ -3,7 +3,7 @@
 --@Descripción: Definicion del esquma de fragmentación para el sitio NO (HTB_s1)
 -- y de sus respectivas secuencias
 
-prompt creadno el fragmento 1 de la tabla sucursal
+prompt creando el fragmento 1 de la tabla sucursal
 drop table if exists sucursal_F1_HTB_S1 cascade constraints;
 create table sucursal_F1_HTB_S1(
     sucursal_id number(10,0) not null,
@@ -14,7 +14,9 @@ create table sucursal_F1_HTB_S1(
     url varchar2(200) not null,
     nombre varchar2(40) not null,
     clave varchar2(10) not null,
-    constraint sucursal_F1_HTB_S1_pk primary key (sucursal_id)
+    constraint sucursal_F1_HTB_S1_pk primary key (sucursal_id),
+    constraint sucursal_F1_HTB_S1_uk_clave unique (clave),
+    constraint sucursal_F1_HTB_S1_uk_url unique (url)
 );
 
 prompt creando la secuencia para la tabla sucursal del fragmento 1
@@ -45,6 +47,7 @@ create table sucursal_taller_F1_HTB_S1(
     dia_descanso number(1,0) not null,
     telefono_atencion varchar2(20) not null,
     constraint sucursal_taller_F1_HTB_S1_pk primary key (sucursal_id),
+    constraint sucursal_taller_F1_HTB_S1_telefono_atencion_uk unique (telefono_atencion),
     constraint sucursal_taller_F1_HTB_S1_dia_descanso_chk check (dia_descanso between 1 and 7),
     constraint sucursal_taller_F1_HTB_S1_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_F1_HTB_S1(sucursal_id)
@@ -60,6 +63,7 @@ create table servicio_laptop_F1_HTB_S1(
     factura blob not null,
     sucursal_id number(10,0) not null,
     constraint servicio_laptop_F1_HTB_S1_pk primary key (laptop_id, num_servicio),
+    constraint servicio_laptop_F1_HTB_S1_importe_chk check (importe > 0), -- adñadir en las demas
     constraint servicio_laptop_F1_HTB_S1_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_taller_F1_HTB_S1(sucursal_id)
 );
@@ -143,7 +147,7 @@ create sequence tipo_monitor_R_HTB_S1_seq
 prompt creando la tabla Status_laptop en HTB_s1
 drop table if exists status_laptop cascade constraints;
 create table status_laptop (
-    status_laptop_id number(10,0) not null,
+    status_laptop_id number(5,0) not null, -- corregir a number (5,0 ) en las demas
     clave varchar2(40) not null,
     descripcion varchar2(200) not null,
     constraint status_laptop_pk primary key (status_laptop_id)
@@ -155,7 +159,7 @@ create table laptop_inventario_F2_HTB_S1(
     laptop_id number(10,0) not null,
     fecha_status date not null,
     sucursal_id number(10,0) not null,
-    status_laptop_id number(10,0) not null,
+    status_laptop_id number(5,0) not null,
     constraint laptop_inventario_F2_HTB_S1_pk primary key (laptop_id),
     constraint laptop_inventario_F2_HTB_S1_laptop_id_fk foreign key (status_laptop_id)
         references status_laptop(status_laptop_id)
@@ -174,6 +178,7 @@ create table laptop_F2_HTB_S1(
     tipo_monitor_id number(10,0) not null,
     laptop_reemplazo_id number(10,0),
     constraint laptop_F2_HTB_S1_pk primary key (laptop_id),
+    constraint laptop_F2_HTB_S1_num_serie_uk unique (num_serie), -- chacar orden de los contraints
     constraint laptop_F2_HTB_S1_tipo_procesador_id_fk foreign key (tipo_procesador_id)
         references tipo_procesador_R_HTB_S1(tipo_procesador_id),
     constraint laptop_F2_HTB_S1_tipo_tarjeta_video_id_fk foreign key (tipo_tarjeta_video_id)
@@ -203,10 +208,10 @@ create table historico_status_laptop_F2_HTB_S1(
     historico_status_laptop_id number(10,0) not null,
     fecha_status date not null,
     laptop_id number(10,0) not null,
-    status_laptop_id number(10,0) not null,
+    status_laptop_id number(5,0) not null,
     constraint historico_status_laptop_F2_HTB_S1_pk primary key (historico_status_laptop_id),
     constraint historico_status_laptop_F2_HTB_S1_laptop_id_fk foreign key (laptop_id)
-        references laptop_F2_HTB_S1(laptop_id),
+        references laptop_inventario_F2_HTB_S1(laptop_id),
     constraint historico_status_laptop_F2_HTB_S1_status_laptop_id_fk foreign key (status_laptop_id)
         references status_laptop(status_laptop_id)
 );
