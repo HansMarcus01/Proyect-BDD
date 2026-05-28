@@ -2,6 +2,9 @@
 --@Fecha creacion: 27/05/2026
 --@Descripcion: Script de validacion de sinonimos
 
+set linesize 200
+col table_name format a30
+
 prompt validando sinonimos para sucursal
 select
     (select count(*) from sucursal_f1) as sucursal_f1,

@@ -33,9 +33,11 @@ prompt creando el fragmento 2 de la tabla sucursal_venta
 drop table if exists sucursal_venta_F2_HTB_S2 cascade constraints;
 create table sucursal_venta_F2_HTB_S2(
     sucursal_id number(10,0) not null,
-    hora_apertura time not null,
-    hora_cierre time not null,
+    hora_apertura number(4,0) not null,
+    hora_cierre number(4,0) not null,
     constraint sucursal_venta_F2_HTB_S2_pk primary key (sucursal_id),
+    constraint sucursal_venta_F2_HTB_S2_hora_apertura_chk check (hora_apertura between 0 and 1440),
+    constraint sucursal_venta_F2_HTB_S2_hora_cierre_chk check (hora_cierre between 0 and 1440),
     constraint sucursal_venta_F2_HTB_S2_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_F2_HTB_S2(sucursal_id)
 );

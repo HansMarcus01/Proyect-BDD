@@ -74,5 +74,3 @@ create or replace synonym tipo_monitor_r3 for tipo_monitor_R_LSI_S1@lsibdd_s1.fi
 create or replace synonym tipo_monitor_r4 for tipo_monitor_R_LSI_S2@lsibdd_s2.fi.unam;
 
 prompt Ejecucion Finalizada!
-disconnect
-exit

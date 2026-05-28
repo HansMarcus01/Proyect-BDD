@@ -1,0 +1,862 @@
+idle> @s-04-ilap-main-sinonimos.sql
+=====================================
+Creando sinonimos para htbbdd_s1
+=====================================
+Connected.
+
+
+
+=====================================
+Creando sinonimos en htbbdd_s1
+=====================================
+Connected.
+
+
+
+Creando sinonimos de sucursal
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_venta
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_taller
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de servicio_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop_inventario
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de historico_status_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_procesador
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_tarjeta_video
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_almacenamiento
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_monitor
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Ejecucion Finalizada!
+validando sinonimos para sucursal
+
+SUCURSAL_F1 SUCURSAL_F2 SUCURSAL_F3 SUCURSAL_F4
+----------- ----------- ----------- -----------
+          0           0           0           0
+
+validando sinonimos para sucursal_venta
+
+SUCURSAL_VENTA_F1 SUCURSAL_VENTA_F2 SUCURSAL_VENTA_F3 SUCURSAL_VENTA_F4
+----------------- ----------------- ----------------- -----------------
+                0                 0                 0                 0
+
+validando sinonimos para sucursal_taller
+
+SUCURSAL_TALLER_F1 SUCURSAL_TALLER_F2 SUCURSAL_TALLER_F3 SUCURSAL_TALLER_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para servicio_laptop
+
+SERVICIO_LAPTOP_F1 SERVICIO_LAPTOP_F2 SERVICIO_LAPTOP_F3 SERVICIO_LAPTOP_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para laptop_inventario
+
+LAPTOP_INVENTARIO_F1 LAPTOP_INVENTARIO_F2
+-------------------- --------------------
+                   0                    0
+
+validando sinonimos para laptop
+
+ LAPTOP_F1  LAPTOP_F2  LAPTOP_F3  LAPTOP_F4  LAPTOP_F5
+---------- ---------- ---------- ---------- ----------
+         0          0          0          0          0
+
+validando sinonimos para historico_status_laptop
+
+HISTORICO_STATUS_LAPTOP_F1 HISTORICO_STATUS_LAPTOP_F2
+-------------------------- --------------------------
+                         0                          0
+
+validando sinonimos para tipo_procesador
+
+TIPO_PROCESADOR_R1 TIPO_PROCESADOR_R2 TIPO_PROCESADOR_R3 TIPO_PROCESADOR_R4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para tipo_tarjeta_video
+
+TIPO_TARJETA_VIDEO_R1 TIPO_TARJETA_VIDEO_R2 TIPO_TARJETA_VIDEO_R3 TIPO_TARJETA_VIDEO_R4
+--------------------- --------------------- --------------------- ---------------------
+                    0                     0                     0                     0
+
+validando sinonimos para tipo_almacenamiento
+
+TIPO_ALMACENAMIENTO_R1 TIPO_ALMACENAMIENTO_R2 TIPO_ALMACENAMIENTO_R3 TIPO_ALMACENAMIENTO_R4
+---------------------- ---------------------- ---------------------- ----------------------
+                     0                      0                      0                      0
+
+validando sinonimos para tipo_monitor
+
+TIPO_MONITOR_R1 TIPO_MONITOR_R2 TIPO_MONITOR_R3 TIPO_MONITOR_R4
+--------------- --------------- --------------- ---------------
+              0               0               0               0
+
+=====================================
+Creando sinonimos para htbbdd_s2
+=====================================
+Connected.
+
+
+
+=====================================
+Creando sinonimos en htbbdd_s2
+=====================================
+Connected.
+
+
+
+Creando sinonimos de sucursal
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_venta
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_taller
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de servicio_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop_inventario
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de historico_status_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_procesador
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_tarjeta_video
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_almacenamiento
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_monitor
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Ejecucion Finalizada!
+validando sinonimos para sucursal
+
+SUCURSAL_F1 SUCURSAL_F2 SUCURSAL_F3 SUCURSAL_F4
+----------- ----------- ----------- -----------
+          0           0           0           0
+
+validando sinonimos para sucursal_venta
+
+SUCURSAL_VENTA_F1 SUCURSAL_VENTA_F2 SUCURSAL_VENTA_F3 SUCURSAL_VENTA_F4
+----------------- ----------------- ----------------- -----------------
+                0                 0                 0                 0
+
+validando sinonimos para sucursal_taller
+
+SUCURSAL_TALLER_F1 SUCURSAL_TALLER_F2 SUCURSAL_TALLER_F3 SUCURSAL_TALLER_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para servicio_laptop
+
+SERVICIO_LAPTOP_F1 SERVICIO_LAPTOP_F2 SERVICIO_LAPTOP_F3 SERVICIO_LAPTOP_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para laptop_inventario
+
+LAPTOP_INVENTARIO_F1 LAPTOP_INVENTARIO_F2
+-------------------- --------------------
+                   0                    0
+
+validando sinonimos para laptop
+
+ LAPTOP_F1  LAPTOP_F2  LAPTOP_F3  LAPTOP_F4  LAPTOP_F5
+---------- ---------- ---------- ---------- ----------
+         0          0          0          0          0
+
+validando sinonimos para historico_status_laptop
+
+HISTORICO_STATUS_LAPTOP_F1 HISTORICO_STATUS_LAPTOP_F2
+-------------------------- --------------------------
+                         0                          0
+
+validando sinonimos para tipo_procesador
+
+TIPO_PROCESADOR_R1 TIPO_PROCESADOR_R2 TIPO_PROCESADOR_R3 TIPO_PROCESADOR_R4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para tipo_tarjeta_video
+
+TIPO_TARJETA_VIDEO_R1 TIPO_TARJETA_VIDEO_R2 TIPO_TARJETA_VIDEO_R3 TIPO_TARJETA_VIDEO_R4
+--------------------- --------------------- --------------------- ---------------------
+                    0                     0                     0                     0
+
+validando sinonimos para tipo_almacenamiento
+
+TIPO_ALMACENAMIENTO_R1 TIPO_ALMACENAMIENTO_R2 TIPO_ALMACENAMIENTO_R3 TIPO_ALMACENAMIENTO_R4
+---------------------- ---------------------- ---------------------- ----------------------
+                     0                      0                      0                      0
+
+validando sinonimos para tipo_monitor
+
+TIPO_MONITOR_R1 TIPO_MONITOR_R2 TIPO_MONITOR_R3 TIPO_MONITOR_R4
+--------------- --------------- --------------- ---------------
+              0               0               0               0
+
+=====================================
+Creando sinonimos para lsibdd_s1
+=====================================
+Connected.
+
+
+
+=====================================
+Creando sinonimos en lsibdd_s1
+=====================================
+Connected.
+
+
+
+Creando sinonimos de sucursal
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_venta
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_taller
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de servicio_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop_inventario
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de historico_status_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_procesador
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_tarjeta_video
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_almacenamiento
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_monitor
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Ejecucion Finalizada!
+validando sinonimos para sucursal
+
+SUCURSAL_F1 SUCURSAL_F2 SUCURSAL_F3 SUCURSAL_F4
+----------- ----------- ----------- -----------
+          0           0           0           0
+
+validando sinonimos para sucursal_venta
+
+SUCURSAL_VENTA_F1 SUCURSAL_VENTA_F2 SUCURSAL_VENTA_F3 SUCURSAL_VENTA_F4
+----------------- ----------------- ----------------- -----------------
+                0                 0                 0                 0
+
+validando sinonimos para sucursal_taller
+
+SUCURSAL_TALLER_F1 SUCURSAL_TALLER_F2 SUCURSAL_TALLER_F3 SUCURSAL_TALLER_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para servicio_laptop
+
+SERVICIO_LAPTOP_F1 SERVICIO_LAPTOP_F2 SERVICIO_LAPTOP_F3 SERVICIO_LAPTOP_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para laptop_inventario
+
+LAPTOP_INVENTARIO_F1 LAPTOP_INVENTARIO_F2
+-------------------- --------------------
+                   0                    0
+
+validando sinonimos para laptop
+
+ LAPTOP_F1  LAPTOP_F2  LAPTOP_F3  LAPTOP_F4  LAPTOP_F5
+---------- ---------- ---------- ---------- ----------
+         0          0          0          0          0
+
+validando sinonimos para historico_status_laptop
+
+HISTORICO_STATUS_LAPTOP_F1 HISTORICO_STATUS_LAPTOP_F2
+-------------------------- --------------------------
+                         0                          0
+
+validando sinonimos para tipo_procesador
+
+TIPO_PROCESADOR_R1 TIPO_PROCESADOR_R2 TIPO_PROCESADOR_R3 TIPO_PROCESADOR_R4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para tipo_tarjeta_video
+
+TIPO_TARJETA_VIDEO_R1 TIPO_TARJETA_VIDEO_R2 TIPO_TARJETA_VIDEO_R3 TIPO_TARJETA_VIDEO_R4
+--------------------- --------------------- --------------------- ---------------------
+                    0                     0                     0                     0
+
+validando sinonimos para tipo_almacenamiento
+
+TIPO_ALMACENAMIENTO_R1 TIPO_ALMACENAMIENTO_R2 TIPO_ALMACENAMIENTO_R3 TIPO_ALMACENAMIENTO_R4
+---------------------- ---------------------- ---------------------- ----------------------
+                     0                      0                      0                      0
+
+validando sinonimos para tipo_monitor
+
+TIPO_MONITOR_R1 TIPO_MONITOR_R2 TIPO_MONITOR_R3 TIPO_MONITOR_R4
+--------------- --------------- --------------- ---------------
+              0               0               0               0
+
+=====================================
+Creando sinonimos para lsibdd_s2
+=====================================
+Connected.
+
+
+
+=====================================
+Creando sinonimos en lsibdd_s2
+=====================================
+Connected.
+
+
+
+Creando sinonimos de sucursal
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_venta
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de sucursal_taller
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de servicio_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop_inventario
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de laptop
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de historico_status_laptop
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_procesador
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_tarjeta_video
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_almacenamiento
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Creando sinonimos de tipo_monitor
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+
+Synonym created.
+
+Ejecucion Finalizada!
+validando sinonimos para sucursal
+
+SUCURSAL_F1 SUCURSAL_F2 SUCURSAL_F3 SUCURSAL_F4
+----------- ----------- ----------- -----------
+          0           0           0           0
+
+validando sinonimos para sucursal_venta
+
+SUCURSAL_VENTA_F1 SUCURSAL_VENTA_F2 SUCURSAL_VENTA_F3 SUCURSAL_VENTA_F4
+----------------- ----------------- ----------------- -----------------
+                0                 0                 0                 0
+
+validando sinonimos para sucursal_taller
+
+SUCURSAL_TALLER_F1 SUCURSAL_TALLER_F2 SUCURSAL_TALLER_F3 SUCURSAL_TALLER_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para servicio_laptop
+
+SERVICIO_LAPTOP_F1 SERVICIO_LAPTOP_F2 SERVICIO_LAPTOP_F3 SERVICIO_LAPTOP_F4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para laptop_inventario
+
+LAPTOP_INVENTARIO_F1 LAPTOP_INVENTARIO_F2
+-------------------- --------------------
+                   0                    0
+
+validando sinonimos para laptop
+
+ LAPTOP_F1  LAPTOP_F2  LAPTOP_F3  LAPTOP_F4  LAPTOP_F5
+---------- ---------- ---------- ---------- ----------
+         0          0          0          0          0
+
+validando sinonimos para historico_status_laptop
+
+HISTORICO_STATUS_LAPTOP_F1 HISTORICO_STATUS_LAPTOP_F2
+-------------------------- --------------------------
+                         0                          0
+
+validando sinonimos para tipo_procesador
+
+TIPO_PROCESADOR_R1 TIPO_PROCESADOR_R2 TIPO_PROCESADOR_R3 TIPO_PROCESADOR_R4
+------------------ ------------------ ------------------ ------------------
+                 0                  0                  0                  0
+
+validando sinonimos para tipo_tarjeta_video
+
+TIPO_TARJETA_VIDEO_R1 TIPO_TARJETA_VIDEO_R2 TIPO_TARJETA_VIDEO_R3 TIPO_TARJETA_VIDEO_R4
+--------------------- --------------------- --------------------- ---------------------
+                    0                     0                     0                     0
+
+validando sinonimos para tipo_almacenamiento
+
+TIPO_ALMACENAMIENTO_R1 TIPO_ALMACENAMIENTO_R2 TIPO_ALMACENAMIENTO_R3 TIPO_ALMACENAMIENTO_R4
+---------------------- ---------------------- ---------------------- ----------------------
+                     0                      0                      0                      0
+
+validando sinonimos para tipo_monitor
+
+TIPO_MONITOR_R1 TIPO_MONITOR_R2 TIPO_MONITOR_R3 TIPO_MONITOR_R4
+--------------- --------------- --------------- ---------------
+              0               0               0               0
+
+Listo!
