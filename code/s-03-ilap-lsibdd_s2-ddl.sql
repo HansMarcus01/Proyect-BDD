@@ -56,7 +56,7 @@ create table sucursal_taller_F4_LSI_S2(
 prompt creando el fragmento replicado 4 de la tabla tipo_procesador
 drop table if exists tipo_procesador_R_LSI_S2 cascade constraints;
 create table tipo_procesador_R_LSI_S2(
-    tipo_procesador_id number(10,0) not null,
+    tipo_procesador_id number(5,0) not null,
     clave varchar2(40) not null,
     descripcion varchar2(400) not null,
     constraint tipo_procesador_R_LSI_S2_pk primary key (tipo_procesador_id)
@@ -75,7 +75,7 @@ create sequence tipo_procesador_R_LSI_S2_seq
 prompt creando el fragmento replicado 4 de la tabla tipo_tarjeta_video
 drop table if exists tipo_tarjeta_video_R_LSI_S2 cascade constraints;
 create table tipo_tarjeta_video_R_LSI_S2(
-    tipo_tarjeta_video_id number(10,0) not null,
+    tipo_tarjeta_video_id number(5,0) not null,
     clave varchar2(40) not null,
     descripcion varchar2(400) not null,
     constraint tipo_tarjeta_video_R_LSI_S2_pk primary key (tipo_tarjeta_video_id)
@@ -94,7 +94,7 @@ create sequence tipo_tarjeta_video_R_LSI_S2_seq
 prompt creando el fragmento replicado 4 de la tabla tipo_almacenamiento
 drop table if exists tipo_almacenamiento_R_LSI_S2 cascade constraints;
 create table tipo_almacenamiento_R_LSI_S2(
-    tipo_almacenamiento_id number(10,0) not null,
+    tipo_almacenamiento_id number(5,0) not null,
     clave varchar2(40) not null,
     descripcion varchar2(400) not null,
     constraint tipo_almacenamiento_R_LSI_S2_pk primary key (tipo_almacenamiento_id)
@@ -113,7 +113,7 @@ create sequence tipo_almacenamiento_R_LSI_S2_seq
 prompt creando el fragmento replicado 4 de la tabla tipo_monitor
 drop table if exists tipo_monitor_R_LSI_S2 cascade constraints;
 create table tipo_monitor_R_LSI_S2(
-    tipo_monitor_id number(10,0) not null,
+    tipo_monitor_id number(5,0) not null,
     clave varchar2(40) not null,
     descripcion varchar2(400) not null,
     constraint tipo_monitor_R_LSI_S2_pk primary key (tipo_monitor_id)
@@ -144,10 +144,10 @@ create table laptop_F3_LSI_S2(
     num_serie varchar2(18) not null,
     cantidad_ram number(6,0) not null,
     caracteristicas_extras varchar2(2000) not null,
-    tipo_procesador_id number(10,0) not null,
-    tipo_tarjeta_video_id number(10,0) not null,
-    tipo_almacenamiento_id number(10,0) not null,
-    tipo_monitor_id number(10,0) not null,
+    tipo_procesador_id number(5,0) not null,
+    tipo_tarjeta_video_id number(5,0) not null,
+    tipo_almacenamiento_id number(5,0) not null,
+    tipo_monitor_id number(5,0) not null,
     laptop_reemplazo_id number(10,0),
     constraint laptop_F3_LSI_S2_pk primary key (laptop_id),
     constraint laptop_F3_LSI_S2_num_serie_uk unique (num_serie),
