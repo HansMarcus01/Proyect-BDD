@@ -45,7 +45,7 @@ begin
             raise_application_error(-20030,
                 'la operación update aun no esta suportada');
         when deleting then
-            if substr(:old.clave,3,2) = 'NO' or  (:old.es_venta and :old.es_taller)
+            if substr(:old.clave,3,2) = 'NO' or  (:old.es_venta and :old.es_taller) then
                 delete from sucursal_f1 where sucursal_id = :old.sucursal_id;
             elsif substr(:old.clave,3,2) = 'EA' then
                 delete from sucursal_f2 where sucursal_id = :old.sucursal_id;
