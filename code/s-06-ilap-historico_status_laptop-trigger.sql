@@ -10,12 +10,12 @@ begin
             if :new.fecha_status < to_date('01-01-2010','dd-mm-yyyy') then
                 insert into historico_status_laptop_f1 (historico_status_laptop_id,
                     fecha_status, laptop_id, status_laptop_id)
-                values (historico_status_laptop_seq.nextval, :new.fecha_status,
+                values (:new.historico_status_laptop_id, :new.fecha_status,
                     :new.laptop_id, :new.status_laptop_id);
             elsif :new.fecha_status >= to_date('01-01-2010','dd-mm-yyyy') then
                 insert into historico_status_laptop_f2 (historico_status_laptop_id,
                     fecha_status, laptop_id, status_laptop_id)
-                values (historico_status_laptop_seq.nextval, :new.fecha_status,
+                values (:new.historico_status_laptop_id, :new.fecha_status,
                     :new.laptop_id, :new.status_laptop_id);
             else
                 raise_application_error(-20010,

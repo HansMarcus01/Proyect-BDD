@@ -10,23 +10,23 @@ begin
             if (:new.es_venta and :new.es_taller) or substr(:new.clave,3,2) = 'NO' then
                     insert into sucursal_f1 (sucursal_id, es_taller,
                         es_venta, latitud, longitud, url, nombre, clave)
-                    values (sucursal_F1_HTB_S1_seq.nextval, :new.es_taller, :new.es_venta,
+                    values (:new.sucursal_id, :new.es_taller, :new.es_venta,
                         :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
                 elsif (:new.es_venta or :new.es_taller) then
                     if substr(:new.clave,3,2) = 'EA' then
                         insert into sucursal_f2 (sucursal_id, es_taller,
                             es_venta, latitud, longitud, url, nombre, clave)
-                        values (sucursal_F2_HTB_S2_seq.nextval, :new.es_taller, :new.es_venta,
+                        values (:new.sucursal_id, :new.es_taller, :new.es_venta,
                             :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
                     elsif substr(:new.clave,3,2) = 'WS' then
                         insert into sucursal_f3 (sucursal_id, es_taller,
                             es_venta, latitud, longitud, url, nombre, clave)
-                        values (sucursal_F3_HTB_S3_seq.nextval, :new.es_taller, :new.es_venta,
+                        values (:new.sucursal_id, :new.es_taller, :new.es_venta,
                             :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
                     elsif substr(:new.clave,3,2) = 'SO' then
                         insert into sucursal_f4 (sucursal_id, es_taller,
                             es_venta, latitud, longitud, url, nombre, clave)
-                        values (sucursal_F4_HTB_S4_seq.nextval, :new.es_taller, :new.es_venta,
+                        values (:new.sucursal_id, :new.es_taller, :new.es_venta,
                             :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
                     else
                         raise_application_error(-20010,

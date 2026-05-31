@@ -21,16 +21,6 @@ create table sucursal_F4_LSI_S2(
         check (es_venta = true or es_taller = true) -- al menos una de las dos debe ser true
 );
 
-prompt creando la secuencia para la tabla sucursal del fragmento 4
-drop sequence if exists sucursal_F4_LSI_S2_seq;
-create sequence sucursal_F4_LSI_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
-
 prompt creando el fragmento 4 de la tabla sucursal_venta
 drop table if exists sucursal_venta_F4_LSI_S2 cascade constraints;
 create table sucursal_venta_F4_LSI_S2(
@@ -66,16 +56,6 @@ create table tipo_procesador_R_LSI_S2(
     constraint tipo_procesador_R_LSI_S2_pk primary key (tipo_procesador_id)
 );
 
-prompt creando la secuencia para la tabla tipo_procesador del fragmento replicado 4
-drop sequence if exists tipo_procesador_R_LSI_S2_seq;
-create sequence tipo_procesador_R_LSI_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
-
 prompt creando el fragmento replicado 4 de la tabla tipo_tarjeta_video
 drop table if exists tipo_tarjeta_video_R_LSI_S2 cascade constraints;
 create table tipo_tarjeta_video_R_LSI_S2(
@@ -84,16 +64,6 @@ create table tipo_tarjeta_video_R_LSI_S2(
     descripcion varchar2(400) not null,
     constraint tipo_tarjeta_video_R_LSI_S2_pk primary key (tipo_tarjeta_video_id)
 );
-
-prompt creando la secuencia para la tabla tipo_tarjeta_video del fragmento replicado 4
-drop sequence if exists tipo_tarjeta_video_R_LSI_S2_seq;
-create sequence tipo_tarjeta_video_R_LSI_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
 
 prompt creando el fragmento replicado 4 de la tabla tipo_almacenamiento
 drop table if exists tipo_almacenamiento_R_LSI_S2 cascade constraints;
@@ -104,16 +74,6 @@ create table tipo_almacenamiento_R_LSI_S2(
     constraint tipo_almacenamiento_R_LSI_S2_pk primary key (tipo_almacenamiento_id)
 );
 
-prompt creando la secuencia para la tabla tipo_almacenamiento del fragmento replicado 4
-drop sequence if exists tipo_almacenamiento_R_LSI_S2_seq;
-create sequence tipo_almacenamiento_R_LSI_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
-
 prompt creando el fragmento replicado 4 de la tabla tipo_monitor
 drop table if exists tipo_monitor_R_LSI_S2 cascade constraints;
 create table tipo_monitor_R_LSI_S2(
@@ -122,16 +82,6 @@ create table tipo_monitor_R_LSI_S2(
     descripcion varchar2(400) not null,
     constraint tipo_monitor_R_LSI_S2_pk primary key (tipo_monitor_id)
 );
-
-prompt creando la secuencia para la tabla tipo_monitor del fragmento replicado 4
-drop sequence if exists tipo_monitor_R_LSI_S2_seq;
-create sequence tipo_monitor_R_LSI_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
 
 prompt creando el fragmento 1 de la tabla laptop
 drop table if exists laptop_F1_LSI_S2 cascade constraints;
@@ -166,16 +116,6 @@ create table laptop_F3_LSI_S2(
     constraint laptop_F3_LSI_S2_laptop_reemplazo_id_fk foreign key (laptop_reemplazo_id)
         references laptop_F1_LSI_S2(laptop_id)
 );
-
-prompt creando la secuencia para los fragmentos 1 y 3 de la tabla laptop
-drop sequence if exists laptop_F1_F3_LSI_S2_seq;
-create sequence laptop_F1_F3_LSI_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
 
 prompt creando el fragmento 4 de la tabla servicio_laptop
 drop table if exists servicio_laptop_F4_LSI_S2 cascade constraints;

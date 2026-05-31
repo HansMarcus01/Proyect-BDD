@@ -21,16 +21,6 @@ create table sucursal_F2_HTB_S2(
         check (es_venta = true or es_taller = true) -- al menos una de las dos debe ser true
 );
 
-prompt creando la secuencia para la tabla sucursal del fragmento 2
-drop sequence if exists sucursal_F2_HTB_S2_seq;
-create sequence sucursal_F2_HTB_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
-
 prompt creando el fragmento 2 de la tabla sucursal_venta
 drop table if exists sucursal_venta_F2_HTB_S2 cascade constraints;
 create table sucursal_venta_F2_HTB_S2(
@@ -81,16 +71,6 @@ create table tipo_procesador_R_HTB_S2(
     constraint tipo_procesador_R_HTB_S2_pk primary key (tipo_procesador_id)
 );
 
-prompt creando la secuencia para la tabla tipo_procesador del fragmento replicado 2
-drop sequence if exists tipo_procesador_R_HTB_S2_seq;
-create sequence tipo_procesador_R_HTB_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
-
 prompt creando el fragmento replicado 2 de la tabla tipo_tarjeta_video
 drop table if exists tipo_tarjeta_video_R_HTB_S2 cascade constraints;
 create table tipo_tarjeta_video_R_HTB_S2(
@@ -99,16 +79,6 @@ create table tipo_tarjeta_video_R_HTB_S2(
     descripcion varchar2(400) not null,
     constraint tipo_tarjeta_video_R_HTB_S2_pk primary key (tipo_tarjeta_video_id)
 );
-
-prompt creando la secuencia para la tabla tipo_tarjeta_video del fragmento replicado 2
-drop sequence if exists tipo_tarjeta_video_R_HTB_S2_seq;
-create sequence tipo_tarjeta_video_R_HTB_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
 
 prompt creando el fragmento replicado 2 de la tabla tipo_almacenamiento
 drop table if exists tipo_almacenamiento_R_HTB_S2 cascade constraints;
@@ -119,16 +89,6 @@ create table tipo_almacenamiento_R_HTB_S2(
     constraint tipo_almacenamiento_R_HTB_S2_pk primary key (tipo_almacenamiento_id)
 );
 
-prompt creando la secuencia para la tabla tipo_almacenamiento del fragmento replicado 2
-drop sequence if exists tipo_almacenamiento_R_HTB_S2_seq;
-create sequence tipo_almacenamiento_R_HTB_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
-
 prompt creando el fragmento replicado 2 de la tabla tipo_monitor
 drop table if exists tipo_monitor_R_HTB_S2 cascade constraints;
 create table tipo_monitor_R_HTB_S2(
@@ -137,16 +97,6 @@ create table tipo_monitor_R_HTB_S2(
     descripcion varchar2(400) not null,
     constraint tipo_monitor_R_HTB_S2_pk primary key (tipo_monitor_id)
 );
-
-prompt creando la secuencia para la tabla tipo_monitor del fragmento replicado 2
-drop sequence if exists tipo_monitor_R_HTB_S2_seq;
-create sequence tipo_monitor_R_HTB_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
 
 prompt creando el fragmento 5 de la tabla laptop
 drop table if exists laptop_F5_HTB_S2 cascade constraints;
@@ -172,16 +122,6 @@ create table laptop_F5_HTB_S2(
         references tipo_monitor_R_HTB_S2(tipo_monitor_id)
 );
 
-prompt creando la secuencia para la tabla laptop del fragmento 5
-drop sequence if exists laptop_F5_HTB_S2_seq;
-create sequence laptop_F5_HTB_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
-
 prompt creando la tabla Status_laptop en HTB_s2
 drop table if exists status_laptop cascade constraints;
 create table status_laptop (
@@ -202,13 +142,3 @@ create table historico_status_laptop_F1_HTB_S2(
     constraint historico_status_laptop_F1_HTB_S2_status_laptop_id_fk foreign key (status_laptop_id)
         references status_laptop(status_laptop_id)
 );
-
-prompt creando la secuencia para la tabla historico_status_laptop del fragmento 1
-drop sequence if exists historico_status_laptop_F1_HTB_S2_seq;
-create sequence historico_status_laptop_F1_HTB_S2_seq
-    start with 1
-    increment by 1
-    nomaxvalue
-    nocycle
-    cache 5
-    order;
