@@ -55,7 +55,7 @@ case
         if v_count_number>0
         THEN
             delete from sucursal_venta_f3
-            where old:sucursal_id=sucursal_id;
+            where :old.sucursal_id=sucursal_id;
 
         ELSE
             select count(*) into v_count_number
@@ -64,7 +64,7 @@ case
             if v_count_number>0
             THEN
                 delete from sucursal_venta_f2
-                where old:sucursal_id=sucursal_id;
+                where :old.sucursal_id=sucursal_id;
             ELSE
                 select count(*) into v_count_number
                 from sucursal_f1
@@ -72,7 +72,7 @@ case
                 if v_count_number>0 
                 THEN
                     delete from sucursal_venta_f1
-                    where old:sucursal_id=sucursal_id;
+                    where :old.sucursal_id=sucursal_id;
                 ELSE
                     select count(*) into v_count_number
                     from sucursal_f4
@@ -80,7 +80,7 @@ case
                     if v_count_number>0 
                     THEN
                          delete from sucursal_venta_f4
-                        where old:sucursal_id=sucursal_id;
+                        where :old.sucursal_id=sucursal_id;
                     ELSE
                         raise_application_error(-20020,
                         'La sucursal id no se encontro en ningún nodo');
