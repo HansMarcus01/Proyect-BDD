@@ -24,8 +24,8 @@ begin
                     || ' no cumple con las fechas permitidas para los fragmentos.');
             end if;
         when updating then
-            raise_application_error(-20003, 'No se permiten eliminaciones en
-                la vista historico_status_laptop');
+            raise_application_error(-20030,
+                'la operación update aun no esta soportada');
         when deleting then
             if :old.fecha_status < to_date('01-01-2010','dd-mm-yyyy') then
                 delete from historico_status_laptop_f1
