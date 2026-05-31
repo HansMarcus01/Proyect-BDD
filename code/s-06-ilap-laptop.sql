@@ -8,6 +8,7 @@ for each row
 begin
     case
         when inserting then
+
             -- Insertar foto en la tabla temporal
             insert into ti_laptop_f1(laptop_id, foto)
             values(:new.laptop_id, :new.foto);
@@ -66,7 +67,7 @@ begin
             else
                 raise_application_error(
                     -20020,
-                    'El id: ' || :new.laptop_id || ' no cumple con el esquema de fragmentacion'
+                    'El num_serie no cumple con el esquema de fragmentacion'
                 );
             end if;
         when updating then
