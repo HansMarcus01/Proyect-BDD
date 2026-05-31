@@ -9,7 +9,6 @@ declare
 begin
     case
         when inserting then
-            -- Verificar que la sucursal exista en el fragmento 1
             select count(*) into v_count
             from sucursal_f4
             where sucursal_id = :new.sucursal_id;
@@ -39,7 +38,7 @@ begin
                             values (:new.sucursal_id, :new.dia_descanso, :new.telefono_atencion);
                         else
                             raise_application_error(-20020, 'La sucursal con ID '
-                            || :new.sucursal_id || ' no existe en ningún fragmento');
+                            || :new.sucursal_id || ' no existe en ningún sitio');
                         end if;
                     end if;
                 end if;
@@ -73,7 +72,7 @@ begin
                             delete from sucursal_taller_f1 where sucursal_id = :old.sucursal_id;
                         else
                             raise_application_error(-20020, 'La sucursal con ID '
-                            || :old.sucursal_id || ' no existe en ningún fragmento');
+                            || :old.sucursal_id || ' no existe en ningún sitio');
                         end if;
                     end if;
                 end if;
