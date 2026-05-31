@@ -40,14 +40,14 @@ case
                         insert into sucursal_venta_f4(sucursal_id,hora_apertura,hora_cierre)
                         VALUES(:new.sucursal_id,:new.hora_apertura,:new.hora_cierre);
                     ELSE
-                        raise_application_error(-20020,
-                        'La sucursal id no se encontro en ningún nodo');
+                            raise_application_error(-20020, 'La sucursal con ID '
+                            || :new.sucursal_id || ' no existe en ningún sitio');
                     END IF;
                 END IF;
             END IF;
         END IF;
     when updating then
-        raise_application_error(-20003, 'No esta');
+        raise_application_error(-20003, 'No esta definida la operación de actualización');
     when deleting then
         select count(*) into v_count_number
         from sucursal_f2
