@@ -16,7 +16,9 @@ create table sucursal_F4_LSI_S2(
     clave varchar2(10) not null,
     constraint sucursal_F4_LSI_S2_pk primary key (sucursal_id),
     constraint sucursal_F4_LSI_S2_uk_clave unique (clave),
-    constraint sucursal_F4_LSI_S2_uk_url unique (url)
+    constraint sucursal_F4_LSI_S2_uk_url unique (url),
+    constraint sucursal_F4_LSI_S2_tipo_sucursal_chk
+        check (es_venta = true or es_taller = true) -- al menos una de las dos debe ser true
 );
 
 prompt creando la secuencia para la tabla sucursal del fragmento 4
