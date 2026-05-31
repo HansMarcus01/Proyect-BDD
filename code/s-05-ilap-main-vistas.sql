@@ -40,10 +40,10 @@ prompt creando vistas con soporte para BLOBs
 @s-05-ilap-htbbdd_s2-vistas-blob.sql
 
 prompt ===========================================
-prompt Creando vistas para htbbdd_s3
+prompt Creando vistas para lsibdd_s1
 prompt ===========================================
 
-connect ilap_bdd/ilap_bdd@htbbdd_s3
+connect ilap_bdd/ilap_bdd@lsibdd_s1
 prompt creando vistas que no requieren manejo de objetos BLOBs
 @s-05-ilap-vistas.sql
 
@@ -54,13 +54,13 @@ prompt creando objetos para manejo de BLOBs
 @s-05-ilap-funciones-blob.sql
 
 prompt creando vistas con soporte para BLOBs
-@s-05-ilap-htbbdd_s3-vistas-blob.sql
+@s-05-ilap-lsibdd_s1-vistas-blob.sql
 
 prompt ===========================================
-prompt Creando vistas para htbbdd_s4
+prompt Creando vistas para lsibdd_s2
 prompt ===========================================
 
-connect ilap_bdd/ilap_bdd@htbbdd_s4
+connect ilap_bdd/ilap_bdd@lsibdd_s2
 prompt creando vistas que no requieren manejo de objetos BLOBs
 @s-05-ilap-vistas.sql
 
@@ -71,7 +71,8 @@ prompt creando objetos para manejo de BLOBs
 @s-05-ilap-funciones-blob.sql
 
 prompt creando vistas con soporte para BLOBs
-@s-05-ilap-htbbdd_s4-vistas-blob.sql
+@s-05-ilap-lsibdd_s2-vistas-blob.sql
 
 prompt Listo!
 disconnect
+exit

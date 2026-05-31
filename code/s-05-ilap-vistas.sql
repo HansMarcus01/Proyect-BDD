@@ -30,31 +30,30 @@ select sucursal_id,hora_apertura,hora_cierre
     from sucursal_venta_f3
 union all
 select sucursal_id,hora_apertura,hora_cierre
-    from sucursal_venta_f4
+    from sucursal_venta_f4;
 
 --sucursal taller
 prompt Creando la Vista sucursal_taller
 create or replace view sucursal_taller as
-select sucursal_id,hora_apertura,hora_cierre
+select sucursal_id,dia_descanso,telefono_atencion
     from sucursal_taller_f1
 union all
-select sucursal_id,hora_apertura,hora_cierre
+select sucursal_id,dia_descanso,telefono_atencion
     from sucursal_taller_f2
 union all
-select sucursal_id,hora_apertura,hora_cierre
+select sucursal_id,dia_descanso,telefono_atencion
     from sucursal_taller_f3
 union all
-select sucursal_id,hora_apertura,hora_cierre
-    from sucursal_taller_f4
+select sucursal_id,dia_descanso,telefono_atencion
+    from sucursal_taller_f4;
 
 -- Laptop inventario
 prompt Creando la Vista laptop_inventario
 create or replace view laptop_inventario as
 select l1.laptop_id, l1.fecha_status, l1.status_laptop_id,
     l1.sucursal_id, l2.rfc_cliente, l2.num_tarjeta
-from laptop_inventario_f1 l1
-join laptop_inventario_f2 l2
-    on l1.laptop_id = l2.laptop_id;
+from laptop_inventario_f2 l1, laptop_inventario_f1 l2
+where l1.laptop_id = l2.laptop_id;
 
 -- Historico status laptop
 prompt Creando la Vista historico_status_laptop
@@ -67,7 +66,7 @@ from historico_status_laptop_f2;
 
 -- Tipo_procesador
 prompt Creando la Vista tipo_procesador
-create or replace view tipo_porcesador as
+create or replace view tipo_procesador as
 select tipo_procesador_id, clave, descripcion
 from tipo_procesador_r1;
 
@@ -90,4 +89,3 @@ select tipo_monitor_id, clave, descripcion
 from tipo_monitor_r1;
 
 prompt Listo!
-exit

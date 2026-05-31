@@ -119,4 +119,3 @@ create global temporary table ts_servicio_laptop_f4(
 )on commit preserve rows;
 
 prompt Listo!
-exit

@@ -48,7 +48,7 @@ begin
     -- aseguramos que no existan registros en la tabla temporal
     delete from ts_servicio_laptop_f1;
     -- insertamos el registro solicitado en la tabla temporal
-    insert into ts_servicio_laptop_f1
+    insert into ts_servicio_laptop_f1 (laptop_id, num_servicio, factura)
         select laptop_id, num_servicio, factura
         from servicio_laptop_f1
         where laptop_id = p_laptop_id
@@ -85,7 +85,7 @@ begin
     -- aseguramos que no existan registros en la tabla temporal
     delete from ts_servicio_laptop_f2;
     -- insertamos el registro solicitado en la tabla temporal
-    insert into ts_servicio_laptop_f2
+    insert into ts_servicio_laptop_f2 (laptop_id, num_servicio, factura)
         select laptop_id, num_servicio, factura
         from servicio_laptop_f2
         where laptop_id = p_laptop_id
@@ -122,7 +122,7 @@ begin
     -- aseguramos que no existan registros en la tabla temporal
     delete from ts_servicio_laptop_f3;
     -- insertamos el registro solicitado en la tabla temporal
-    insert into ts_servicio_laptop_f3
+    insert into ts_servicio_laptop_f3 (laptop_id, num_servicio, factura)
         select laptop_id, num_servicio, factura
         from servicio_laptop_f3
         where laptop_id = p_laptop_id
@@ -159,7 +159,7 @@ begin
     -- aseguramos que no existan registros en la tabla temporal
     delete from ts_servicio_laptop_f4;
     -- insertamos el registro solicitado en la tabla temporal
-    insert into ts_servicio_laptop_f4
+    insert into ts_servicio_laptop_f4 (laptop_id, num_servicio, factura)
         select laptop_id, num_servicio, factura
         from servicio_laptop_f4
         where laptop_id = p_laptop_id

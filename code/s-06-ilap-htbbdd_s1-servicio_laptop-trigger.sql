@@ -11,7 +11,7 @@ begin
     case
         when inserting then
             select count(*) into v_count
-            from servicio_taller_f1
+            from sucursal_taller_f1
             where sucursal_id = :new.sucursal_id;
             if v_count > 0 then
                 insert into servicio_laptop_f1 (laptop_id, num_servicio,
@@ -20,7 +20,7 @@ begin
                     :new.diagnostico, :new.factura, :new.sucursal_id);
             else
                 select count(*) into v_count
-                from servicio_taller_f2
+                from sucursal_taller_f2
                 where sucursal_id = :new.sucursal_id;
                 if v_count > 0 then
                     -- insertando en la tabla temporal
@@ -40,7 +40,7 @@ begin
                     and num_servicio = :new.num_servicio;
                 else
                     select count(*) into v_count
-                    from servicio_taller_f3
+                    from sucursal_taller_f3
                     where sucursal_id = :new.sucursal_id;
                     if v_count > 0 then
                         -- insertando en la tabla temporal
@@ -60,7 +60,7 @@ begin
                         and num_servicio = :new.num_servicio;
                     else
                         select count(*) into v_count
-                        from servicio_taller_f4
+                        from sucursal_taller_f4
                         where sucursal_id = :new.sucursal_id;
                         if v_count > 0 then
                             -- insertando en la tabla temporal
@@ -90,7 +90,7 @@ begin
                 'la operación update aun no esta soportada');
         when deleting then
             select count(*) into v_count
-            from servicio_taller_f1
+            from sucursal_taller_f1
             where sucursal_id = :old.sucursal_id;
             if v_count > 0 then
                 delete from servicio_laptop_f1
@@ -98,7 +98,7 @@ begin
                 and num_servicio = :old.num_servicio;
             else
                 select count(*) into v_count
-                from servicio_taller_f2
+                from sucursal_taller_f2
                 where sucursal_id = :old.sucursal_id;
                 if v_count > 0 then
                     delete from servicio_laptop_f2
@@ -106,7 +106,7 @@ begin
                     and num_servicio = :old.num_servicio;
                 else
                     select count(*) into v_count
-                    from servicio_taller_f3
+                    from sucursal_taller_f3
                     where sucursal_id = :old.sucursal_id;
                     if v_count > 0 then
                         delete from servicio_laptop_f3
@@ -114,7 +114,7 @@ begin
                         and num_servicio = :old.num_servicio;
                     else
                         select count(*) into v_count
-                        from servicio_taller_f4
+                        from sucursal_taller_f4
                         where sucursal_id = :old.sucursal_id;
                         if v_count > 0 then
                             delete from servicio_laptop_f4
@@ -130,3 +130,4 @@ begin
     end case;
 end;
 /
+show errors
