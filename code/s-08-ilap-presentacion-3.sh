@@ -1,8 +1,8 @@
 
 
 #!/bin/bash
-#@Autor: Jorge A. Rodríguez C
-#@Fecha creación: dd/mm/yyyy
+#@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
+#@Fecha creación: 01/06/2026
 #@Descripción: Copia archivos binarios
 #Si ocurre un error, el programa termina.
 set -e

@@ -30,8 +30,28 @@ Prompt => Realizando limpieza inicial ....
 set feedback off
 Prompt Eliminando datos de historico_status_laptop
 delete from historico_status_laptop;
---completar. Tener cuidado con el orden de eliminación,
---debe ser eliminada con base a las dependencias de las tablas.
+Prompt Eliminando datos de servicio_laptop
+delete from servicio_laptop;
+Prompt Eliminando datos de laptop
+delete from laptop;
+Prompt Eliminando datos de laptop_inventario
+delete from laptop_inventario;
+Prompt Eliminando datos de sucursal_venta
+delete from sucursal_venta;
+Prompt Eliminando datos de sucursal_taller
+delete from sucursal_taller;
+Prompt Eliminando datos de sucursal
+delete from sucursal;
+Prompt Eliminando datos de status_laptop
+delete from status_laptop;
+Prompt Eliminando datos de tipo_monitor
+delete from tipo_monitor;
+Prompt Eliminando datos de tipo_almacenamiento
+delete from tipo_almacenamiento;
+Prompt Eliminando datos de tipo_tarjeta_video
+delete from tipo_tarjeta_video;
+Prompt Eliminando datos de tipo_procesador
+delete from tipo_procesador;
 Prompt => Realizando Carga de datos ....
 Prompt cargando tipo_tarjeta_video
 @carga-inicial/tipo_tarjeta_video.sql
