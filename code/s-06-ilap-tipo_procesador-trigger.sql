@@ -1,4 +1,4 @@
---@Autor: Hansel Yael Tepal Briseño
+--@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
 --@Fecha creación: 31/05/2026
 --@Descripción: Definición del trigger instead of para la tabla replicada tipo_procesador
 

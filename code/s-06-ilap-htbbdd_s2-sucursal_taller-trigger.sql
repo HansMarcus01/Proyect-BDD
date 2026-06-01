@@ -1,4 +1,4 @@
---@Autor: Hansel Yael Tepal Briseño
+--@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
 --@Fecha creación: 24/05/2026
 --@Descripción: Definición del trigger instead of para la vista sucursal_taller desde la pdb HTB_S2 (EA)
 
