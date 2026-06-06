@@ -10,8 +10,8 @@ Prompt configurando soporte BLOB para htbbdd_s1
 connect ilap_bdd/ilap_bdd@htbbdd_s1
 @s-07-ilap-configuracion-soporte-blobs.sql
 --htbdd_s2
-Prompt configurando soporte BLOB para htbdd_s2
-connect ilap_bdd/ilap_bdd@htbdd_s2
+Prompt configurando soporte BLOB para htbbdd_s2
+connect ilap_bdd/ilap_bdd@htbbdd_s2
 @s-07-ilap-configuracion-soporte-blobs.sql
 --lsibdd_s1
 Prompt configurando soporte BLOB para lsibdd_s1

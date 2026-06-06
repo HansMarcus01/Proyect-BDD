@@ -46,5 +46,3 @@ create database link htbbdd_s1.fi.unam using 'HTBBDD_S1';
 create database link htbbdd_s2.fi.unam using 'HTBBDD_S2';
 
 prompt Ejecución Finalizada!
-disconnect
-exit

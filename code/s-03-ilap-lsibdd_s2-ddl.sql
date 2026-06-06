@@ -7,29 +7,29 @@ prompt creadno el fragmento 4 de la tabla sucursal
 drop table if exists sucursal_F4_LSI_S2 cascade constraints;
 create table sucursal_F4_LSI_S2(
     sucursal_id number(10,0) not null,
-    es_taller boolean not null,
-    es_venta boolean not null,
+    es_taller number(1,0) not null,
+    es_venta number(1,0) not null,
     latitud float not null,
     longitud float not null,
     url varchar2(200) not null,
     nombre varchar2(40) not null,
     clave varchar2(10) not null,
     constraint sucursal_F4_LSI_S2_pk primary key (sucursal_id),
-    constraint sucursal_F4_LSI_S2_uk_clave unique (clave),
-    constraint sucursal_F4_LSI_S2_uk_url unique (url),
-    constraint sucursal_F4_LSI_S2_tipo_sucursal_chk
-        check (es_venta = true or es_taller = true) -- al menos una de las dos debe ser true
+    -- constraint sucursal_F4_LSI_S2_uk_clave unique (clave),
+    -- constraint sucursal_F4_LSI_S2_uk_url unique (url),
+    constraint sucursal_F4_LSI_S2_es_taller_chk check (es_taller in (0, 1)),
+    constraint sucursal_F4_LSI_S2_es_venta_chk check (es_venta in (0, 1))
+    -- constraint sucursal_F4_LSI_S2_tipo_sucursal_chk
+    --     check (es_venta = 1 or es_taller = 1) -- al menos una de las dos debe ser true
 );
 
 prompt creando el fragmento 4 de la tabla sucursal_venta
 drop table if exists sucursal_venta_F4_LSI_S2 cascade constraints;
 create table sucursal_venta_F4_LSI_S2(
     sucursal_id number(10,0) not null,
-    hora_apertura number(4,0) not null,
-    hora_cierre number(4,0) not null,
+    hora_apertura date not null,
+    hora_cierre date not null,
     constraint sucursal_venta_F4_LSI_S2_pk primary key (sucursal_id),
-    constraint sucursal_venta_F4_LSI_S2_hora_apertura_chk check (hora_apertura between 0 and 1440),
-    constraint sucursal_venta_F4_LSI_S2_hora_cierre_chk check (hora_cierre between 0 and 1440),
     constraint sucursal_venta_F4_LSI_S2_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_F4_LSI_S2(sucursal_id)
 );
@@ -124,7 +124,7 @@ create table servicio_laptop_F4_LSI_S2(
     num_servicio number(10,0) not null,
     importe number(8,2) not null,
     diagnostico varchar2(2000) not null,
-    factura blob not null,
+    factura blob,
     sucursal_id number(10,0) not null,
     constraint servicio_laptop_F4_LSI_S2_pk primary key (laptop_id, num_servicio),
     constraint servicio_laptop_F4_LSI_S2_importe_chk check (importe > 0),

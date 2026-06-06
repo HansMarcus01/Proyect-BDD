@@ -1,44 +1,56 @@
 --@Autor: Hansel Yael Tepal Briseño y Luis Daniel Salazar Islas
 --@Fecha creación: 31/05/2026
 --@Descripción: Distribución de eliminación
-
-CREATE [OR REPLACE ] PROCEDURE limpia_base ()     
+prompt conectando a la base de datos
+connect ilap_bdd/ilap_bdd@&pdb
+prompt creando procedimiento para eliminar datos
+create or replace procedure limpia_base
 IS
 BEGIN
-   Prompt Eliminando datos de historico_status_laptop
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de historico_status_laptop');
     delete from historico_status_laptop;
-    Prompt Eliminando datos de servicio_laptop
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de servicio_laptop');
     delete from servicio_laptop;
-    Prompt Eliminando datos de laptop
-    delete from laptop;
-    Prompt Eliminando datos de laptop_inventario
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de laptop_inventario');
     delete from laptop_inventario;
-    Prompt Eliminando datos de sucursal_venta
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de laptop');
+    delete from laptop;
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de sucursal_venta');
     delete from sucursal_venta;
-    Prompt Eliminando datos de sucursal_taller
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de sucursal_taller');
     delete from sucursal_taller;
-    Prompt Eliminando datos de sucursal
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de sucursal');
     delete from sucursal;
-    Prompt Eliminando datos de status_laptop
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de status_laptop');
     delete from status_laptop;
-    Prompt Eliminando datos de tipo_monitor
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de tipo_monitor');
     delete from tipo_monitor;
-    Prompt Eliminando datos de tipo_almacenamiento
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de tipo_almacenamiento');
     delete from tipo_almacenamiento;
-    Prompt Eliminando datos de tipo_tarjeta_video
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de tipo_tarjeta_video');
     delete from tipo_tarjeta_video;
-    Prompt Eliminando datos de tipo_procesador
+
+    DBMS_OUTPUT.PUT_LINE('Eliminando datos de tipo_procesador');
     delete from tipo_procesador;
 
 EXCEPTION
-    
-    raise;
-
+    WHEN OTHERS THEN
+        raise;
 END;
 /
+show errors
 
 Prompt Seleccionar la PDB para realizar la eliminación de datos
-connect netmax_bdd/ilap_bdd@&pdb
 set serveroutput on
 Prompt Eliminando datos ...
 declare

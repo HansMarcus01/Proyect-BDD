@@ -74,5 +74,3 @@ prompt creando vistas con soporte para BLOBs
 @s-05-ilap-lsibdd_s2-vistas-blob.sql
 
 prompt Listo!
-disconnect
-exit

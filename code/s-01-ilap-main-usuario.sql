@@ -34,5 +34,3 @@ connect sys/&&syspass@lsibdd_s2 as sysdba
 @s-01-ilap-usuario.sql
 
 prompt Ejecución Finalizada!
-disconnect
-exit

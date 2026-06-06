@@ -17,9 +17,9 @@ connect ilap_bdd/ilap_bdd@&pdb
 Prompt Personalizando el formato de fechas
 alter session set nls_date_format='yyyy-mm-dd hh24:mi:ss';
 Prompt =>Al ocurrir un error se saldrá del programa y se hará rollback
-whenever sqlerror exit rollback
-Pause => Presionar Enter para Iniciar con la extracción de datos binarios,
-Ctrl-C para cancelar
+whenever sqlerror exit rollback;
+prompt Pause => Presionar Enter para Iniciar con la extracción de datos binarios,
+prompt Ctrl-C para cancelar
 --Invoca a un shell script para realizar la extracción y copia de archivos
 !sh s-08-ilap-presentacion-3.sh
 Prompt ==================================================
@@ -32,18 +32,16 @@ Prompt Eliminando datos de historico_status_laptop
 delete from historico_status_laptop;
 Prompt Eliminando datos de servicio_laptop
 delete from servicio_laptop;
-Prompt Eliminando datos de laptop
-delete from laptop;
 Prompt Eliminando datos de laptop_inventario
 delete from laptop_inventario;
+Prompt Eliminando datos de laptop
+delete from laptop;
 Prompt Eliminando datos de sucursal_venta
 delete from sucursal_venta;
 Prompt Eliminando datos de sucursal_taller
 delete from sucursal_taller;
 Prompt Eliminando datos de sucursal
 delete from sucursal;
-Prompt Eliminando datos de status_laptop
-delete from status_laptop;
 Prompt Eliminando datos de tipo_monitor
 delete from tipo_monitor;
 Prompt Eliminando datos de tipo_almacenamiento

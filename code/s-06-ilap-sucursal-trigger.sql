@@ -7,45 +7,43 @@ instead of insert or update or delete on sucursal
 begin
     case
         when inserting then
-            if (:new.es_venta and :new.es_taller) or substr(:new.clave,3,2) = 'NO' then
-                    insert into sucursal_f1 (sucursal_id, es_taller,
-                        es_venta, latitud, longitud, url, nombre, clave)
-                    values (:new.sucursal_id, :new.es_taller, :new.es_venta,
-                        :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
-                elsif (:new.es_venta or :new.es_taller) then
-                    if substr(:new.clave,3,2) = 'EA' then
-                        insert into sucursal_f2 (sucursal_id, es_taller,
-                            es_venta, latitud, longitud, url, nombre, clave)
-                        values (:new.sucursal_id, :new.es_taller, :new.es_venta,
-                            :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
-                    elsif substr(:new.clave,3,2) = 'WS' then
-                        insert into sucursal_f3 (sucursal_id, es_taller,
-                            es_venta, latitud, longitud, url, nombre, clave)
-                        values (:new.sucursal_id, :new.es_taller, :new.es_venta,
-                            :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
-                    elsif substr(:new.clave,3,2) = 'SO' then
-                        insert into sucursal_f4 (sucursal_id, es_taller,
-                            es_venta, latitud, longitud, url, nombre, clave)
-                        values (:new.sucursal_id, :new.es_taller, :new.es_venta,
-                            :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
-                    else
-                        raise_application_error(-20010,
-                            'El registro con clave '
-                            || :new.clave
-                            || ' no cumple con las regiones permitidas (NO, EA, WS, SO).');
-                    end if;
-                else
-                    raise_application_error(-20010,
-                        'El registro con clave '
-                        || :new.clave
-                        || ' no cumple con los valores permitidos'
-                        || ' para los campos es_taller y es_venta.');
+            if (:new.es_venta not in (0, 1)) or (:new.es_taller not in (0, 1))
+                or (:new.es_venta = 0 and :new.es_taller = 0) or (substr(:new.clave,3,2) not in ('NO', 'EA', 'WS', 'SO')) then
+                raise_application_error(-20010,
+                    'El registro con clave '
+                    || :new.clave
+                    || ' no cumple con los valores permitidos para los campos es_taller y es_venta.');
+            elsif (:new.es_venta = 1 and :new.es_taller =1) or substr(:new.clave,3,2) = 'NO' then
+                insert into sucursal_f1 (sucursal_id, es_taller,
+                    es_venta, latitud, longitud, url, nombre, clave)
+                values (:new.sucursal_id, :new.es_taller, :new.es_venta,
+                    :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
+            elsif substr(:new.clave,3,2) = 'EA' then
+                insert into sucursal_f2 (sucursal_id, es_taller,
+                    es_venta, latitud, longitud, url, nombre, clave)
+                values (:new.sucursal_id, :new.es_taller, :new.es_venta,
+                    :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
+            elsif substr(:new.clave,3,2) = 'WS' then
+                insert into sucursal_f3 (sucursal_id, es_taller,
+                    es_venta, latitud, longitud, url, nombre, clave)
+                values (:new.sucursal_id, :new.es_taller, :new.es_venta,
+                    :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
+            elsif substr(:new.clave,3,2) = 'SO' then
+                insert into sucursal_f4 (sucursal_id, es_taller,
+                    es_venta, latitud, longitud, url, nombre, clave)
+                values (:new.sucursal_id, :new.es_taller, :new.es_venta,
+                    :new.latitud, :new.longitud, :new.url, :new.nombre, :new.clave);
+            else
+                raise_application_error(-20010,
+                    'El registro con clave '
+                    || :new.clave
+                    || ' no cumple con las regiones permitidas (NO, EA, WS, SO).');
                 end if;
         when updating then
             raise_application_error(-20030,
                 'la operación update aun no esta suportada');
         when deleting then
-            if substr(:old.clave,3,2) = 'NO' or  (:old.es_venta and :old.es_taller) then
+            if substr(:old.clave,3,2) = 'NO' or  (:old.es_venta = 1 and :old.es_taller = 1) then
                 delete from sucursal_f1 where sucursal_id = :old.sucursal_id;
             elsif substr(:old.clave,3,2) = 'EA' then
                 delete from sucursal_f2 where sucursal_id = :old.sucursal_id;

@@ -6,29 +6,29 @@ prompt creando el fragmento 1 de la tabla sucursal
 drop table if exists sucursal_F1_HTB_S1 cascade constraints;
 create table sucursal_F1_HTB_S1(
     sucursal_id number(10,0) not null,
-    es_taller boolean not null,
-    es_venta boolean not null,
+    es_taller number(1,0) not null,
+    es_venta number(1,0) not null,
     latitud float not null,
     longitud float not null,
     url varchar2(200) not null,
     nombre varchar2(40) not null,
     clave varchar2(10) not null,
     constraint sucursal_F1_HTB_S1_pk primary key (sucursal_id),
-    constraint sucursal_F1_HTB_S1_uk_clave unique (clave),
-    constraint sucursal_F1_HTB_S1_uk_url unique (url),
-    constraint sucursal_F1_HTB_S1_tipo_sucursal_chk
-        check (es_venta = true or es_taller = true) -- al menos una de las dos debe ser true
+    -- constraint sucursal_F1_HTB_S1_uk_clave unique (clave),
+    -- constraint sucursal_F1_HTB_S1_uk_url unique (url),
+    constraint sucursal_F1_HTB_S1_es_taller_chk check (es_taller in (0, 1)),
+    constraint sucursal_F1_HTB_S1_es_venta_chk check (es_venta in (0, 1))
+    -- constraint sucursal_F1_HTB_S1_tipo_sucursal_chk
+    --     check (es_venta = 1 or es_taller = 1) -- al menos una de las dos debe ser true
 );
 
 prompt creando el fragmento 1 de la tabla sucursal_venta
 drop table if exists sucursal_venta_F1_HTB_S1 cascade constraints;
 create table sucursal_venta_F1_HTB_S1(
     sucursal_id number(10,0) not null,
-    hora_apertura number(4,0) not null,
-    hora_cierre number(4,0) not null,
+    hora_apertura date not null,
+    hora_cierre date not null,
     constraint sucursal_venta_F1_HTB_S1_pk primary key (sucursal_id),
-    constraint sucursal_venta_F1_HTB_S1_hora_apertura_chk check (hora_apertura between 0 and 1440),
-    constraint sucursal_venta_F1_HTB_S1_hora_cierre_chk check (hora_cierre between 0 and 1440),
     constraint sucursal_venta_F1_HTB_S1_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_F1_HTB_S1(sucursal_id)
 );
@@ -53,7 +53,7 @@ create table servicio_laptop_F1_HTB_S1(
     num_servicio number(10,0) not null,
     importe number(8,2) not null,
     diagnostico varchar2(2000) not null,
-    factura blob not null,
+    factura blob,
     sucursal_id number(10,0) not null,
     constraint servicio_laptop_F1_HTB_S1_pk primary key (laptop_id, num_servicio),
     constraint servicio_laptop_F1_HTB_S1_importe_chk check (importe > 0), -- adñadir en las demas
@@ -113,7 +113,7 @@ drop table if exists laptop_inventario_F2_HTB_S1 cascade constraints;
 create table laptop_inventario_F2_HTB_S1(
     laptop_id number(10,0) not null,
     fecha_status date not null,
-    sucursal_id number(10,0) not null,
+    sucursal_id number(10,0),
     status_laptop_id number(5,0) not null,
     constraint laptop_inventario_F2_HTB_S1_pk primary key (laptop_id),
     constraint laptop_inventario_F2_HTB_S1_status_laptop_id_fk foreign key (status_laptop_id)
@@ -141,9 +141,7 @@ create table laptop_F2_HTB_S1(
     constraint laptop_F2_HTB_S1_tipo_almacenamiento_id_fk foreign key (tipo_almacenamiento_id)
         references tipo_almacenamiento_R_HTB_S1(tipo_almacenamiento_id),
     constraint laptop_F2_HTB_S1_tipo_monitor_id_fk foreign key (tipo_monitor_id)
-        references tipo_monitor_R_HTB_S1(tipo_monitor_id),
-    constraint laptop_F2_HTB_S1_laptop_reemplazo_id_fk foreign key (laptop_reemplazo_id)
-        references laptop_inventario_F2_HTB_S1(laptop_id)
+        references tipo_monitor_R_HTB_S1(tipo_monitor_id)
 );
 
 prompt creando el fragmento 2 de la tabla historico_status_laptop

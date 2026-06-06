@@ -89,9 +89,9 @@ prompt Creando trigger para la tabla tipo_monitor
 @s-06-ilap-tipo_monitor-trigger.sql
 
 Prompt ==============================
-Prompt Creando triggers en lsibdd_s1
+Prompt Creando triggers en lsibdd_s2
 Prompt ==============================
-connect ilap_bdd/ilap_bdd@lsibdd_s1
+connect ilap_bdd/ilap_bdd@lsibdd_s2
 
 prompt Creando trigger para la tabla sucursal
 @s-06-ilap-sucursal-trigger.sql
@@ -117,5 +117,3 @@ prompt Creando trigger para la tabla tipo_monitor
 @s-06-ilap-tipo_monitor-trigger.sql
 
 prompt Listo!
-disconnect
-exit

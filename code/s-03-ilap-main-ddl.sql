@@ -30,4 +30,3 @@ connect ilap_bdd/ilap_bdd@lsibdd_s2
 @s-03-ilap-lsibdd_s2-ddl.sql
 
 prompt Ejecución Finalizada!
-exit
