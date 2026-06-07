@@ -35,6 +35,12 @@
 
 \graphicspath{{./img/}{./figs/}}
 
+% Macro to place images shifted into the left margin. Adjust -1.25in
+% if your left margin changes in the geometry package.
+\newcommand{\leftmarginincludegraphics}[2][]{%
+    \noindent\hspace*{-1.25in}\makebox[0pt][l]{\includegraphics[#1]{#2}}%
+}
+
 \lstset{
     language=VHDL,
     basicstyle=\ttfamily\small,
@@ -152,7 +158,43 @@
     \hline
 \end{longtable}
 
-\section{Modelos Relacionales}
+\section{Modelos relacionales de cada sitio}
+
+\subsection{Sitio Norte}
+\begin{figure}[H]
+    \leftmarginincludegraphics[width=\dimexpr\textwidth+2.5in\relax]{img/ProyectoSitioNO.jpg}
+    \caption{Sitio Norte}
+    \label{fig:asignacion_sitios}
+\end{figure}
+
+\newpage
+
+\subsection{Sitio Este}
+\begin{figure}[H]
+    \leftmarginincludegraphics[width=\dimexpr\textwidth+2.5in\relax]{img/ProyectoSitioEA.jpg}
+    \caption{Sitio Este}
+    \label{fig:asignacion_sitios}
+\end{figure}
+
+\newpage
+
+\subsection{Sitio Oeste}
+\begin{figure}[H]
+    \leftmarginincludegraphics[width=\dimexpr\textwidth+2.5in\relax]{img/ProyectoSitioWS.jpg}
+    \caption{Sitio Oeste}
+    \label{fig:asignacion_sitios}
+\end{figure}
+
+\newpage
+
+\subsection{Sitio Sur}
+\begin{figure}[H]
+    \leftmarginincludegraphics[width=\dimexpr\textwidth+2.5in\relax]{img/ProyectoSitioSO.jpg}
+    \caption{Sitio Sur}
+    \label{fig:asignacion_sitios}
+\end{figure}
+
+\newpage
 
 \section{Tabla de Asignación de Sitios}
 
@@ -220,10 +262,6 @@
 \hline
 \text{laptop\_f1\_lsi\_s2} & \text{servicio\_laptop\_f4\_LSI\_s2} & SO \\
 \hline
-\text{laptop\_inventario\_f1\_} \newline \text{LSI\_s1} & \text {laptop\_f4\_LSI\_s1} & WS \\
-\hline
-\text{laptop\_inventario\_f2\_} \newline \text{HTB\_s1} & \text {laptop\_f2\_HTB\_s1} & NO \\
-\hline
 \text{lapptop\_inventario\_f2\_} \newline \text{HTB\_s1} & \text{historico\_status\_laptop\_f2\_HTB\_s1} & NO \\
 \hline
 \text{status\_laptop} & \text{historico\_status\_laptop\_f1\_HTB\_s2} & EA \\
@@ -233,4 +271,14 @@
 \text{status\_laptop} & \text{laptop\_inventario\_f2\_HTB\_s1} & NO \\
 \hline
 \end{longtable}
+
+\newpage
+
+\section{Conclusiones}
+
+El equipo integró con éxito los contenidos de las prácticas y clases en un caso de negocio completo, aplicando técnicas de modelado y normalización, diseñando esquemas y generando DDL, vistas, funciones y triggers que reflejan decisiones fundamentadas de fragmentación (horizontal, vertical e híbrida), replicación y transparencia. Se consideró las restricciones de la red entre sitios para balancear rendimiento, consistencia y disponibilidad, optimizando consultas y estrategias de replicación para minimizar la comunicación entre sitios. La pariticipación de todos
+los integrantes garantizó el correcto funcionamiento de la base de datos. En conclusión, se cumplió el objetivo general del curso.
+
+
+
 \end{document}
