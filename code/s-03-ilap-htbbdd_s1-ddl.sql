@@ -14,12 +14,12 @@ create table sucursal_F1_HTB_S1(
     nombre varchar2(40) not null,
     clave varchar2(10) not null,
     constraint sucursal_F1_HTB_S1_pk primary key (sucursal_id),
-    -- constraint sucursal_F1_HTB_S1_uk_clave unique (clave),
-    -- constraint sucursal_F1_HTB_S1_uk_url unique (url),
+    constraint sucursal_F1_HTB_S1_uk_clave unique (clave),
+    constraint sucursal_F1_HTB_S1_uk_url unique (url),
     constraint sucursal_F1_HTB_S1_es_taller_chk check (es_taller in (0, 1)),
-    constraint sucursal_F1_HTB_S1_es_venta_chk check (es_venta in (0, 1))
-    -- constraint sucursal_F1_HTB_S1_tipo_sucursal_chk
-    --     check (es_venta = 1 or es_taller = 1) -- al menos una de las dos debe ser true
+    constraint sucursal_F1_HTB_S1_es_venta_chk check (es_venta in (0, 1)),
+    constraint sucursal_F1_HTB_S1_tipo_sucursal_chk
+        check (es_venta = 1 or es_taller = 1) -- al menos una de las dos debe ser true
 );
 
 prompt creando el fragmento 1 de la tabla sucursal_venta
