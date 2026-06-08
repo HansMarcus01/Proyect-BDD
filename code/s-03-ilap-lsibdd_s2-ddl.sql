@@ -117,6 +117,13 @@ create table laptop_F3_LSI_S2(
         references laptop_F1_LSI_S2(laptop_id)
 );
 
+prompt indexando llaves foraneas de la tabla laptop
+create index laptop_F3_LSI_S2_tipo_procesador_id_ix on laptop_F3_LSI_S2(tipo_procesador_id);
+create index laptop_F3_LSI_S2_tipo_tarjeta_video_id_ix on laptop_F3_LSI_S2(tipo_tarjeta_video_id);
+create index laptop_F3_LSI_S2_tipo_almacenamiento_id_ix on laptop_F3_LSI_S2(tipo_almacenamiento_id);
+create index laptop_F3_LSI_S2_tipo_monitor_id_ix on laptop_F3_LSI_S2(tipo_monitor_id);
+create index laptop_F3_LSI_S2_laptop_reemplazo_id_ix on laptop_F3_LSI_S2(laptop_reemplazo_id);
+
 prompt creando el fragmento 4 de la tabla servicio_laptop
 drop table if exists servicio_laptop_F4_LSI_S2 cascade constraints;
 create table servicio_laptop_F4_LSI_S2(
@@ -133,6 +140,9 @@ create table servicio_laptop_F4_LSI_S2(
     constraint servicio_laptop_F4_LSI_S2_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_taller_F4_LSI_S2(sucursal_id)
 );
+
+prompt indexando llaves foraneas de la tabla servicio_laptop
+create index servicio_laptop_F4_LSI_S2_sucursal_id_ix on servicio_laptop_F4_LSI_S2(sucursal_id);
 
 prompt creando la tabla Status_laptop en LSI_S2
 drop table if exists status_laptop cascade constraints;

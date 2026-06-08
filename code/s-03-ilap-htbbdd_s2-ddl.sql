@@ -62,6 +62,9 @@ create table servicio_laptop_F2_HTB_S2(
         references sucursal_taller_F2_HTB_S2(sucursal_id)
 );
 
+prompt indexando llaves foraneas de la tabla servicio_laptop
+create index servicio_laptop_F2_HTB_S2_sucursal_id_ix on servicio_laptop_F2_HTB_S2(sucursal_id);
+
 prompt creando el fragmento replicado 2 de la tabla tipo_procesador
 drop table if exists tipo_procesador_R_HTB_S2 cascade constraints;
 create table tipo_procesador_R_HTB_S2(
@@ -122,6 +125,14 @@ create table laptop_F5_HTB_S2(
         references tipo_monitor_R_HTB_S2(tipo_monitor_id)
 );
 
+
+prompt indexando llaves foraneas de la tabla laptop
+create index laptop_F5_HTB_S2_tipo_procesador_id_ix on laptop_F5_HTB_S2(tipo_procesador_id);
+create index laptop_F5_HTB_S2_tipo_tarjeta_video_id_ix on laptop_F5_HTB_S2(tipo_tarjeta_video_id);
+create index laptop_F5_HTB_S2_tipo_almacenamiento_id_ix on laptop_F5_HTB_S2(tipo_almacenamiento_id);
+create index laptop_F5_HTB_S2_tipo_monitor_id_ix on laptop_F5_HTB_S2(tipo_monitor_id);
+create index laptop_F5_HTB_S2_laptop_reemplazo_id_ix on laptop_F5_HTB_S2(laptop_reemplazo_id);
+
 prompt creando la tabla Status_laptop en HTB_s2
 drop table if exists status_laptop cascade constraints;
 create table status_laptop (
@@ -142,3 +153,6 @@ create table historico_status_laptop_F1_HTB_S2(
     constraint historico_status_laptop_F1_HTB_S2_status_laptop_id_fk foreign key (status_laptop_id)
         references status_laptop(status_laptop_id)
 );
+
+prompt indexando llaves foraneas de la tabla historico_status_laptop
+create index historico_status_laptop_F1_HTB_S2_laptop_id_ix on historico_status_laptop_F1_HTB_S2(laptop_id);

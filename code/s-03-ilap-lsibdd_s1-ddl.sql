@@ -62,6 +62,9 @@ create table servicio_laptop_F3_LSI_S1(
         references sucursal_taller_F3_LSI_S1(sucursal_id)
 );
 
+prompt indexando llaves foraneas de la tabla servicio_laptop
+create index servicio_laptop_F3_LSI_S1_sucursal_id_ix on servicio_laptop_F3_LSI_S1(sucursal_id);
+
 prompt creando el fragmento replicado 3 de la tabla tipo_procesador
 drop table if exists tipo_procesador_R_LSI_S1 cascade constraints;
 create table tipo_procesador_R_LSI_S1(
@@ -140,4 +143,10 @@ create table laptop_F4_LSI_S1(
         references tipo_monitor_R_LSI_S1(tipo_monitor_id)
 );
 
+prompt indexando llaves foraneas de la tabla laptop
+create index laptop_F4_LSI_S1_tipo_procesador_id_ix on laptop_F4_LSI_S1(tipo_procesador_id);
+create index laptop_F4_LSI_S1_tipo_tarjeta_video_id_ix on laptop_F4_LSI_S1(tipo_tarjeta_video_id);
+create index laptop_F4_LSI_S1_tipo_almacenamiento_id_ix on laptop_F4_LSI_S1(tipo_almacenamiento_id);
+create index laptop_F4_LSI_S1_tipo_monitor_id_ix on laptop_F4_LSI_S1(tipo_monitor_id);
+create index laptop_F4_LSI_S1_laptop_reemplazo_id_ix on laptop_F4_LSI_S1(laptop_reemplazo_id);
 
