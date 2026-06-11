@@ -59,6 +59,10 @@ create table servicio_laptop_F1_HTB_S1(
     constraint servicio_laptop_F1_HTB_S1_importe_chk check (importe > 0), -- adñadir en las demas
     constraint servicio_laptop_F1_HTB_S1_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_taller_F1_HTB_S1(sucursal_id)
+)
+partition by hash (laptop_id) (
+    partition p_servicio_laptop_F1_HTB_S1_1 tablespace ts_serv_laptop_F1_HTB_S1_1,
+    partition p_servicio_laptop_F1_HTB_S1_2 tablespace ts_serv_laptop_F1_HTB_S1_2
 );
 
 prompt indexando llaves foraneas de la tabla servicio_laptop
@@ -164,6 +168,11 @@ create table historico_status_laptop_F2_HTB_S1(
         references laptop_inventario_F2_HTB_S1(laptop_id),
     constraint historico_status_laptop_F2_HTB_S1_status_laptop_id_fk foreign key (status_laptop_id)
         references status_laptop(status_laptop_id)
+)
+partition by range (fecha_status)
+interval (numtoyminterval(1, 'YEAR'))
+store in (ts_hist_status_F2_HTB_S1_1, ts_hist_status_F2_HTB_S1_2)(
+    partition p0 values less than (to_date('2011-01-01', 'YYYY-MM-DD')) tablespace ts_hist_status_F2_HTB_S1_1
 );
 
 prompt creando los indices de las llaves foraneas de la tabla historico_status_laptop

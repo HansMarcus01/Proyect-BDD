@@ -60,6 +60,10 @@ create table servicio_laptop_F2_HTB_S2(
     constraint servicio_laptop_F2_HTB_S2_importe_chk check (importe > 0),
     constraint servicio_laptop_F2_HTB_S2_sucursal_id_fk foreign key (sucursal_id)
         references sucursal_taller_F2_HTB_S2(sucursal_id)
+)
+partition by hash (laptop_id) (
+    partition p_servicio_laptop_F2_HTB_S2_1 tablespace ts_serv_laptop_F2_HTB_S2_1,
+    partition p_servicio_laptop_F2_HTB_S2_2 tablespace ts_serv_laptop_F2_HTB_S2_2
 );
 
 prompt indexando llaves foraneas de la tabla servicio_laptop
