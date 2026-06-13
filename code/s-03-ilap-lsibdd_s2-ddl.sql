@@ -3,7 +3,7 @@
 --@Descripción: Definicion del esquma de fragmentación para el sitio SO (LSI_s2)
 -- y de sus respectivas secuencias
 
-prompt creadno el fragmento 4 de la tabla sucursal
+prompt creando el fragmento 4 de la tabla sucursal
 drop table if exists sucursal_F4_LSI_S2 cascade constraints;
 create table sucursal_F4_LSI_S2(
     sucursal_id number(10,0) not null,
