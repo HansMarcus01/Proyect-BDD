@@ -6,8 +6,6 @@ whenever sqlerror exit rollback;
 set serveroutput on
 
 
-accept syspass char prompt 'Proporcione la contaseña del usuario SYS: ' hide
-
 connect sys/&&syspass@htbbdd_s1 as sysdba
 prompt limpiando los tablespaces existentes en htbbdd_s1
 declare

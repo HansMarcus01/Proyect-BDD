@@ -5,6 +5,9 @@
 clear screen
 whenever sqlerror exit rollback;
 Prompt Iniciando con la creación de la BDD.
+
+accept syspass char prompt 'Proporcione la contaseña del usuario SYS: ' hide
+
 @s-01-ilap-main-usuario.sql
 @s-02-ilap-ligas.sql
 @s-03-ilap-main-ddl.sql

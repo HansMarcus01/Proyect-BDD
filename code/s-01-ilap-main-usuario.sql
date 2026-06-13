@@ -7,7 +7,6 @@ whenever sqlerror exit rollback;
 set serveroutput on
 
 prompt Inciando la creación/eliminación de usuario ilap_bdd
-accept syspass char prompt 'Proporcione la contaseña del usuario SYS: ' hide
 
 prompt =====================================
 prompt Creando usuario en htbbdd_s1

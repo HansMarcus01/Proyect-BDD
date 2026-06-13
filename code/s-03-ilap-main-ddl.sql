@@ -5,10 +5,6 @@
 clear screen
 whenever sqlerror exit rollback;
 
-prompt =====================================
-prompt creando los tablespaces necesarios para todos los fragmentos
-prompt =====================================
-@s-03-tablespaces.sql
 
 prompt =====================================
 prompt Creando fragmentos en htbbdd_s1
